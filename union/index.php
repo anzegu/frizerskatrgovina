@@ -88,8 +88,14 @@
 						<li><a href="#" data-nav-section="pricing"><span>Pricing</span></a></li>
 						<li><a href="#" data-nav-section="services"><span>Services</span></a></li>
 						<li><a href="#" data-nav-section="team"><span>Team</span></a></li>
+<<<<<<< HEAD:union/index.php
 						<li><a href="#" data-nav-section="faq"><span>FAQ</span></a></li>                                               
 					</ul>     
+=======
+						<li><a href="#" data-nav-section="faq"><span>FAQ</span></a></li>
+						<li class="call-to-action"><a href="prikaz_izdelkov.php"><span>Sign up free</span></a></li>
+					</ul>
+>>>>>>> f0b10e3d6e3f39291b50efd30f5d323ee7fc8ef3:union/index.html
 				</div>
                                 <div class="login">
                                 <button class="dropbtn">Log in</button>
