@@ -61,6 +61,8 @@ while ($row = mysqli_fetch_array($result)) {
    echo '<td>'."<a href='info.php?id=" . $id . "'>VEČ</a>".'</td>';
    echo '</tr>';
    
+    
+   
 }
 
 ?>

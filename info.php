@@ -43,8 +43,16 @@ while ($row = mysqli_fetch_array($result1)) {
    echo '<td>'."KATEGORIJE: ".$row['ime'].'</td>';
    echo '</tr>';
 }
-
+                echo '<tr>';
+                echo '<form method="post" action="kosarica_insert.php">';
+                echo '<input type="hidden" name="id" value="'.$id.'">';
+                 echo '<td>'.'<input type="number" name = "kolicina">'.'</td>';
+                echo '<td>'.'<input type="submit" name="submit" value="Dodaj v košarico!">'.'</td>';
+                echo '</form>';
+                echo '</tr>';
 
 ?>
+    
+    <a href="kosarica.php">košarica</a>
 
 </table>
