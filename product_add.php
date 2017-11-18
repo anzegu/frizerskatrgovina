@@ -10,6 +10,9 @@
      <input   type="text" name="opis" placeholder="Vnesite opis ..." required="required" /><br />
     <p>Cena:</p>
     <input   type="number" name="cena" placeholder="Vnesite ceno ..."  required="required" /><br />
+    
+     <p>Količina Izdelkov:</p>
+    <input   type="number" name="kolicina_izdelkov" placeholder="Vnesite kolicino ..."  required="required" /><br />
     <br><br>
     
     <p> Izberite kategorije izdelka (več možnosti) </p>

@@ -4,13 +4,14 @@ include_once 'connection.php';
     $ime = $_POST['ime'];
     $opis = $_POST['opis'];
     $cena = $_POST['cena'];
+    $kolicina_izdelkov = $_POST['kolicina_izdelkov'];
     $opis_slike = $_POST['opis_slike'];
     
    //$kategorije_id = implode(', ', $_POST['kategorije']);
  
     
-    $query = sprintf("INSERT INTO izdelki (ime, opis, cena) 
-                          VALUES ('%s','%s','$cena'); ",
+    $query = sprintf("INSERT INTO izdelki (ime, opis, cena, kolicina) 
+                          VALUES ('%s','%s','$cena', '$kolicina_izdelkov'); ",
                          mysqli_real_escape_string($link, $ime),
                          mysqli_real_escape_string($link, $opis));
     

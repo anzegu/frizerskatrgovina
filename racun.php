@@ -5,11 +5,9 @@ include_once 'session.php';
 
 $user_id = $_SESSION['user_id'];
 
-
-
 echo '<table>';
 
-$query = "SELECT k.id, k.skupna_cena, k.status FROM kosarice k WHERE uporabnik_id = $user_id";
+$query = "SELECT k.id, k.skupna_cena, k.status FROM kosarice k WHERE uporabnik_id = $user_id AND status = 0";
 $result = mysqli_query($link, $query) or die(mysqli_error($link));
 
 while ($row = mysqli_fetch_array($result)) {
@@ -35,10 +33,6 @@ while ($row = mysqli_fetch_array($result)) {
    
    echo '<tr>';
    echo '<td>'."IME: ".$row['ime'].'</td>';
-   echo '</tr>';
-   
-   echo '<tr>';
-   echo '<td>'."OPIS: ".$row['opis'].'</td>';
    echo '</tr>';
    
    echo '<tr>';
@@ -69,43 +63,10 @@ while ($row = mysqli_fetch_array($result)) {
    echo '<td>'."KOLICINA: ".$row['ikkol'].'</td>';
    echo '</tr>';
    
-   
-   
-   echo '<tr>';
-   echo '<td>';
-   echo '<form method="post" action="kosarica_delete.php">';
-   echo '<input type="hidden" name="kosarica_id" value="'.$kosarica_id.'">';
-   echo '<input type="hidden" name="izdelek_id" value="'.$izdelek_id.'">';
-   echo '<input type="hidden" name="kolicina" value="'.$kolicina.'">';
-   echo '<input type="submit" name="submit" value="ODSTRANI">';
-   echo '</form>';
-   echo '</td>';
-   echo '</tr>';
-   
-   
-  
-   /*
-   echo '<tr>';
-   echo '<td>'."SKUPNA CENA: ".$row['skupna_cena'].'</td>';
-   echo '</tr>';
-   */
 }
 
 
-$query = "UPDATE kosarice SET skupna_cena = '$rez' WHERE uporabnik_id = $user_id AND status = 0";
-    
-    
-    if (mysqli_query($link, $query)) {
-        //echo "New record created successfully";
-    } else {
-        echo "Error: " . $query . "<br>" . mysqli_error($link);
-    }
-    
-   // echo $query;
-    
-    
-    
-    $query = "SELECT k.skupna_cena FROM kosarice k WHERE uporabnik_id = $user_id AND status = 0";
+$query = "SELECT k.skupna_cena FROM kosarice k WHERE uporabnik_id = $user_id AND status = 0";
     $result = mysqli_query($link, $query) or die(mysqli_error($link));
 
     while ($row = mysqli_fetch_array($result)) {
@@ -115,34 +76,57 @@ $query = "UPDATE kosarice SET skupna_cena = '$rez' WHERE uporabnik_id = $user_id
      echo '<tr>';
    echo '<td>'."SKUPAJ: ".$skupna_cenaa."$".'</td>';
    echo '</tr>';  
+
+   
+     echo '<tr>';
+   echo '<td>NASLOV DOSTAVE</td>';
+   echo '</tr>';  
+   
+   
+$query4 = "SELECT kr.*, kr.ime AS krIme, s.* FROM kraji kr INNER JOIN saloni s ON kr.id = s.kraj_id INNER JOIN uporabniki u ON s.id = u.salon_id";
+    $result4 = mysqli_query($link, $query4) or die(mysqli_error($link));
+
+    while ($row = mysqli_fetch_array($result4)) {
+   
+        
+   echo '<tr>';
+   echo '<td>'.$row['krIme'].'</td>';
+   echo '</tr>';  
+   
+   echo '<tr>';
+   echo '<td>'.$row['posta'].'</td>';
+   echo '</tr>';  
+   
+   echo '<tr>';
+   echo '<td>'.$row['ime'].'</td>';
+   echo '</tr>'; 
+   
+   echo '<tr>';
+   echo '<td>'.$row['naslov'].'</td>';
+   echo '</tr>'; 
+   
+   echo '<tr>';
+   echo '<td>'.$row['tel'].'</td>';
+   echo '</tr>'; 
+
+}  
+   
+   
    
 echo '</table>';
     
 
-     echo "<a href='prikaz_izdelkov.php'>Nadaljuj nakup</a></br>";
+     echo "<a href='kosarica.php'>NAZAJ</a></br>";
      
-     if ($skupna_cenaa == 0)
-     {
-         echo "V KOŠARICI NIMATE IZDELKOV";
-     }
-     else
-     {
-   echo '<tr>';
+    echo '<tr>';
    echo '<td>';
-   echo '<form method="post" action="racun.php">';
+   echo '<form method="post" action="zakljucek.php">';
    //echo '<input type="hidden" name="izdelek_id" value="'.$izdelek_id.'">';
    echo '<input type="hidden" name="skupna_cenaa" value="'.$skupna_cenaa.'">';
    echo '<input type="hidden" name="kolicina" value="'.$kolicina.'">';
-   echo '<input type="submit" name="submit" value="POVZETEK NAROČILA">';
+   echo '<input type="submit" name="submit" value="ODDAJ NAROČILO">';
    echo '</form>';
    echo '</td>';
    echo '</tr>';
    
-     }
-     }
-
-
-else
-{
-    echo "V KOŠARICI NIMATE IZDELKOV";
 }

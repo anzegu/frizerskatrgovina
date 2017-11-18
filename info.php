@@ -3,14 +3,18 @@
 <?php
 
 include_once 'connection.php';
+include_once 'session.php';
 
+$user_id = $_SESSION['user_id'];
 $id = $_GET['id'];
 
-$query = "SELECT i.ime, i.opis, i.cena, i.akcijska_cena, s.url FROM izdelki i INNER JOIN slike s ON i.id=s.izdelek_id WHERE i.id = $id"; 
+$query = "SELECT i.ime, i.opis, i.cena, i.akcijska_cena, i.kolicina, s.url FROM izdelki i INNER JOIN slike s ON i.id=s.izdelek_id WHERE i.id = $id"; 
 $result = mysqli_query($link, $query) or die(mysqli_error($link));
 
 while ($row = mysqli_fetch_array($result)) {
    
+    $kolicina_izdelkov = $row['kolicina'];
+    
    echo '<tr>';
    echo '<td>'."<img src='".$row['url']."' width=250 heght=500 </td>";
    echo '</tr>';
@@ -46,13 +50,42 @@ while ($row = mysqli_fetch_array($result1)) {
                 echo '<tr>';
                 echo '<form method="post" action="kosarica_insert.php">';
                 echo '<input type="hidden" name="id" value="'.$id.'">';
-                 echo '<td>'.'<input type="number" name = "kolicina">'.'</td>';
+                 echo '<input type="hidden" name="kolicina_izdelkov" value="'.$kolicina_izdelkov.'">';
+                 echo '<td>'.'<input type="number" name = "kolicina" required="required">'.'</td>';
                 echo '<td>'.'<input type="submit" name="submit" value="Dodaj v košarico!">'.'</td>';
                 echo '</form>';
                 echo '</tr>';
 
+                 
 ?>
     
-    <a href="kosarica.php">košarica</a>
+    <?php
+    $messege = $_SESSION['message'];
+    
+    $_SESSION['message'];
+    $_SESSION['message'] = null;
+      
+    
+    echo '<tr>';
+                 echo '<td>'.$messege.'</td>';
+                 echo '</tr>';
+    ?>
+    
+    
+    
+    
+    <?php
+    $query = "SELECT k.id, k.skupna_cena, k.status FROM kosarice k WHERE uporabnik_id = $user_id";
+    $result = mysqli_query($link, $query) or die(mysqli_error($link));
+    if(mysqli_num_rows($result)==0){
+
+        
+    }
+    else
+    {
+        echo '<a href="kosarica.php">košarica</a>';
+    }
+?>
+    
 
 </table>
