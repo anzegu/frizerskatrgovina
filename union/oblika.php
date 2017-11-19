@@ -54,7 +54,8 @@ include_once 'session.php';
                                                         <?php
                                           if (isset($_SESSION['potrjen'])&&($_SESSION['potrjen']==1)) 
                                              {
-                                                echo '<li><a href="product_add.php" data-nav-section="explore"><span>Dodaj izdelke</span></a></li>';   
+                                                echo '<li><a href="product_add.php" data-nav-section="explore"><span>Dodaj izdelke</span></a></li>'; 
+                                                echo '<li><a href="potrdi.php" data-nav-section="explore"><span>Potrdi uporabnike</span></a></li>';
                                             }
                                         ?>                                             
 					
