@@ -20,13 +20,14 @@
     
     $query = "SELECT * FROM kategorije ";
     $result = mysqli_query($link, $query);
-      
+    $row=  mysqli_num_rows($result);
    while ($row = mysqli_fetch_array($result)) {
 
-       echo "<input type='checkbox' name='kategorije[]' value='".$row['id']."'>"
+       echo "<input type='checkbox' required='required' name='kategorije[]' value='".$row['id']."'>"
         .$row['ime']."</br>"."</br>";
        
    }
+        echo '<a href="d_kategorije.php">Dodaj kategorijo</a>';
     ?>
     
       <p>Izberi Sliko: </p>
