@@ -29,6 +29,7 @@ if (mysqli_query($link, $query1)) {
         echo "New record created successfully";
     } else {
         echo "Error: " . $query1 . "<br>" . mysqli_error($link);
+        header( "Refresh:3; url=product_add.php");
 }
 header('Location: product_add.php');
     }
