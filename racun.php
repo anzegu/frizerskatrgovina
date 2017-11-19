@@ -1,4 +1,8 @@
 <?php
+include_once 'union/oblika.php';
+?>
+
+<?php
 
 include_once 'connection.php';
 include_once 'session.php';
@@ -60,7 +64,7 @@ while ($row = mysqli_fetch_array($result)) {
    
    
    echo '<tr>';
-   echo '<td>'."KOLICINA: ".$row['ikkol'].'</td>';
+   echo '<td>'."KOLIČINA: ".$row['ikkol'].'</td>';
    echo '</tr>';
    
 }
@@ -77,9 +81,13 @@ $query = "SELECT k.skupna_cena FROM kosarice k WHERE uporabnik_id = $user_id AND
    echo '<td>'."SKUPAJ: ".$skupna_cenaa."$".'</td>';
    echo '</tr>';  
 
+   echo '<tr>';
+   echo'<td height="50px">'." ".'</td>';
+   echo '</tr>';  
+   
    
      echo '<tr>';
-   echo '<td>NASLOV DOSTAVE</td>';
+   echo '<td>NASLOV DOSTAVE:</td>';
    echo '</tr>';  
    
    
@@ -124,7 +132,11 @@ echo '</table>';
    //echo '<input type="hidden" name="izdelek_id" value="'.$izdelek_id.'">';
    echo '<input type="hidden" name="skupna_cenaa" value="'.$skupna_cenaa.'">';
    echo '<input type="hidden" name="kolicina" value="'.$kolicina.'">';
-   echo '<input type="submit" name="submit" value="ODDAJ NAROČILO">';
+    echo '<div class="gumb_vec">';
+   echo '<div class="gumb_vec1">';
+   echo '<input class="btn btn-select-plan btn-sm" type="submit" name="submit" value="ODDAJ NAROČILO">';
+    echo '</div>';
+   echo '</div>';
    echo '</form>';
    echo '</td>';
    echo '</tr>';

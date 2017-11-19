@@ -1,21 +1,30 @@
+<?php
+include_once 'union/oblika.php';
+?>
 
          <?php
          include_once 'connection.php';
         ?>
-    <h1>DODAJ IZDELKE</h1>
+
+<div class="ok">
+    <h1 style="color: red">DODAJ IZDELKE</h1>
 <form action="product_insert.php" method="post" enctype="multipart/form-data">
-    <p>Ime Izdelka:</p>
-     <input  type="text" name="ime" placeholder="vnesite ime ..." required="required" /><br />
-    <p>Opis Izdelka:</p>
-     <input   type="text" name="opis" placeholder="Vnesite opis ..." required="required" /><br />
-    <p>Cena:</p>
-    <input   type="number" name="cena" placeholder="Vnesite ceno ..."  required="required" /><br />
+    <p>Ime Izdelka: <br>
+    <input  type="text" name="ime" placeholder="vnesite ime ..." required="required" />
+  </p>
+  <p>Opis Izdelka: <br>
+     <textarea name="opis" placeholder="vnesite opis ..." required="required" cols="50" rows="5"></textarea>
+  </p>
+     
+  <p>Cena: <br>
+    <input   type="number" name="cena" placeholder="Vnesite ceno ..."  required="required" />
+    </p>
     
-     <p>Količina Izdelkov:</p>
-    <input   type="number" name="kolicina_izdelkov" placeholder="Vnesite kolicino ..."  required="required" /><br />
-    <br><br>
+    <p>Količina Izdelkov: <br>
+    <input   type="number" name="kolicina_izdelkov" placeholder="Vnesite kolicino ..."  required="required" />
+    </p>
     
-    <p> Izberite kategorije izdelka (več možnosti) </p>
+    <p> Izberite kategorije izdelka (več možnosti) <br>
     <?php
     
     $query = "SELECT * FROM kategorije ";
@@ -28,15 +37,20 @@
        
    }
     ?>
-    
-      <p>Izberi Sliko: </p>
+    </p>
+</div>
+
+<div class="ok">
+
+    <p>Izberi Sliko: <br>
       <input type="file" name="fileToUpload" id="fileToUpload"> <br />
-
-      <p>Opis Slike: </p>
+    </p>
+      
+    <p>Opis Slike: <br>
        <input   type="text" name="opis_slike" placeholder="Vnesite opis slike ..." /><br /> <br />
-
+    </p>
+       
     <input type="submit" value="Vnesi" name="submit" />
     <input type="reset" value="Prekliči" />
 </form>
-    
-    <p><a href="prikaz_izdelkov.php">Prikaz izdelkov</a></p>
+</div>
