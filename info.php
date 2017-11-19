@@ -65,6 +65,9 @@ while ($row = mysqli_fetch_array($result)) {
    
 }
 
+
+            if (isset($_SESSION['potrjen'])&&($_SESSION['potrjen']==1) || ($_SESSION['potrjen']==2))  
+                  {
                 echo '<tr>';
                 echo '<form method="post" action="kosarica_insert.php">';
                 echo '<input type="hidden" name="id" value="'.$id.'">';
@@ -73,7 +76,15 @@ while ($row = mysqli_fetch_array($result)) {
                 echo  '<input type="submit" name="submit" value="Dodaj v košarico!">'.'</td>';
                 echo '</form>';
                 echo '</tr>';
-
+                  }
+                  else
+                  {
+                       echo '<tr>';
+                       echo '<td>';
+                      echo "Za naročevanje izdelkov te mora potrditi Admin";
+                      echo '</td>';
+                       echo '</tr>';
+                  }
                  
 ?>
     
