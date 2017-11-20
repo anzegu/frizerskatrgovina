@@ -4,13 +4,14 @@ include_once 'connection.php';
     $ime = $_POST['ime'];
     $opis = $_POST['opis'];
     $cena = $_POST['cena'];
+    $kolicina_izdelkov = $_POST['kolicina_izdelkov'];
     $opis_slike = $_POST['opis_slike'];
     
    //$kategorije_id = implode(', ', $_POST['kategorije']);
  
     
-    $query = sprintf("INSERT INTO izdelki (ime, opis, cena) 
-                          VALUES ('%s','%s','$cena'); ",
+    $query = sprintf("INSERT INTO izdelki (ime, opis, cena, kolicina) 
+                          VALUES ('%s','%s','$cena', '$kolicina_izdelkov'); ",
                          mysqli_real_escape_string($link, $ime),
                          mysqli_real_escape_string($link, $opis));
     
@@ -28,6 +29,7 @@ if (mysqli_query($link, $query1)) {
         echo "New record created successfully";
     } else {
         echo "Error: " . $query1 . "<br>" . mysqli_error($link);
+        header( "Refresh:3; url=product_add.php");
 }
 header('Location: product_add.php');
     }
