@@ -25,7 +25,11 @@ else{
 $query = "SELECT i.id, i.ime, i.cena, i.akcijska_cena, s.url FROM izdelki i INNER JOIN slike s ON i.id=s.izdelek_id"; 
 }
 $result = mysqli_query($link, $query) or die(mysqli_error($link));
-
+$row = mysqli_num_rows($result);
+if($row==0){
+    echo '<h1 style="color: red; text-align: center;">Ni najdenih izdelkov</h1>';
+    header("Refresh: 3; url=prikaz_izdelkov.php");
+}else{
 while ($row = mysqli_fetch_array($result)) {
  
    $id = $row['id'];
@@ -94,7 +98,7 @@ echo '<div>';
     $opozorilo = $_GET['opozorilo'];
     echo "<script type='text/javascript'>alert('Za ogled se prijavi!')</script>";
 }
-
+}
 ?>
    
     </body>
