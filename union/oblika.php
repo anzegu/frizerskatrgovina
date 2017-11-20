@@ -37,7 +37,7 @@ include_once 'session.php';
  
         </style>
 	</head>
-	<body>
+	<body style="background: #f1faff;">
 	<header role="banner" id="fh5co-header">
 		<div class="fluid-container">
 			<nav class="navbar navbar-default">
@@ -49,15 +49,15 @@ include_once 'session.php';
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
 						<li class="active"><a href="prikaz_izdelkov.php" data-nav-section="home"><span>Domača stran</span></a></li>
-                                            <?php    if(isset($_SESSION['admin'])&&$_SESSION['admin']==1){
+                                            <?php    if(isset($_SESSION['potrjen'])&&$_SESSION['potrjen']==1){
                                                     echo '<li class="active"><a href="evidenca.php" data-nav-section="home"><span>Evidenca</span></a></li>';
                                             }
                                                 
                                                         
                                           if (isset($_SESSION['potrjen'])&&($_SESSION['potrjen']==1)) 
                                              {
-                                                echo '<li><a href="product_add.php" data-nav-section="explore"><span>Dodaj izdelke</span></a></li>'; 
-                                                echo '<li><a href="potrdi.php" data-nav-section="explore"><span>Potrdi uporabnike</span></a></li>';
+                                                echo '<li class="active"><a href="product_add.php" data-nav-section="explore"><span>Dodaj izdelke</span></a></li>'; 
+                                                echo '<li class="active"><a href="potrdi.php" data-nav-section="explore"><span>Potrdi uporabnike</span></a></li>';
                                             }
                                         ?>                                             
 					
@@ -80,6 +80,4 @@ include_once 'session.php';
             <br>
             <br>
             <br>
-	</body>
-</html>
 
