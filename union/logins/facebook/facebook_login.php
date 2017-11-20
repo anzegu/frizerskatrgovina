@@ -1,5 +1,5 @@
 <?php
-	
+include("../baza.php");	
 
 	# Start the session 
 	session_start();
@@ -55,17 +55,9 @@
 		  echo 'Facebook SDK returned an error: ' . $e->getMessage();
 		  exit;
 		}
-
-
-		// Print the user Details
-		echo "Welcome !<br><br>";
-		echo 'Name: ' . $userNode->getName().'<br>';
-		echo 'User ID: ' . $userNode->getId().'<br>';
-		echo 'Email: ' . $userNode->getProperty('email').'<br><br>';
-
-		$image = 'https://graph.facebook.com/'.$userNode->getId().'/picture?width=200';
-		echo "Picture<br>";
-		echo "<img src='$image' /><br><br>";
+                //Dobi uporabnikovo ime in email
+		$_SESSION['FaceName'] = $userNode->getName();
+		$_SESSION['FaceEmail'] = $userNode->getProperty('email');
 		
 	}else{
 		$permissions  = ['email'];

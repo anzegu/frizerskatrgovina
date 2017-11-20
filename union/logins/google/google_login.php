@@ -29,8 +29,7 @@ if(isset($code)) {
 } else{
     $pay_load = null;
 }
-if(isset($pay_load)){
-    
+if(isset($pay_load["email"])){
 }
 
 

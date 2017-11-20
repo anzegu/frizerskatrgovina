@@ -1,4 +1,9 @@
-
+<?php 
+session_start();
+ob_start();
+require 'logins/facebook_v2/facebookLogin.php';
+require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -88,23 +93,36 @@
 						<li><a href="#" data-nav-section="pricing"><span>Pricing</span></a></li>
 						<li><a href="#" data-nav-section="services"><span>Services</span></a></li>
 						<li><a href="#" data-nav-section="team"><span>Team</span></a></li>
-<<<<<<< HEAD:union/index.php
 						<li><a href="#" data-nav-section="faq"><span>FAQ</span></a></li>                                               
 					</ul>     
-=======
-						<li><a href="#" data-nav-section="faq"><span>FAQ</span></a></li>
-						<li class="call-to-action"><a href="prikaz_izdelkov.php"><span>Sign up free</span></a></li>
-					</ul>
->>>>>>> f0b10e3d6e3f39291b50efd30f5d323ee7fc8ef3:union/index.html
 				</div>
-                                <div class="login">
+                            <?php 
+                            if (isset ($_SESSION['steamid']))
+                            {?>    
+                                <div class="logout">
+                                    <button class="logoutbtn"><a href="logins/logout.php">Logout</a></button>
+                                </div><?php } ?>
+                            
+                            <?php 
+                            if (isset($_SESSION['FaceName']))
+                            {?>    
+                                <div class="logout">
+                                    <button class="logoutbtn"><a href="logins/logout.php">Logout</a></button>
+                                </div><?php } ?>
+                            
+                            <?php
+                            if (!isset($_SESSION['FaceName']) && (!isset ($_SESSION['steamid'])))
+                            {?>
+                            <div class="login">
                                 <button class="dropbtn">Log in</button>
                                 <div class="dropdown-content">
-                                    <a href="logins/facebook/facebook_login.php">Facebook</a>
-                                    <a href="logins/steam/steam_login.php">Steam</a>
+                                    <?php 
+                                    echo "<a href='".$_SESSION['loginURL']."'>Facebook</a>"; ?>
+                                    <?php echo loginbutton(); ?>
                                     <a href="logins/google/google_login.php">Gmail</a>
-                                </div>
-                                </div>
+                                </div></div>
+                            <?php }?>
+                            
 			</nav>
 	  </div>
 	</header>
@@ -641,3 +659,4 @@
 	</body>
 </html>
 
+<?php ob_end_flush();
