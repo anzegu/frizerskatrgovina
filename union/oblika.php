@@ -1,5 +1,8 @@
 <?php
 include_once 'session.php';
+ob_start();
+require 'union/logins/facebook_v2/facebookLogin.php';
+require 'union/logins/steam/SteamAuthentication/steamauth/steamauth.php';
 ?>
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
@@ -62,14 +65,32 @@ include_once 'session.php';
                                         ?>                                             
 					
 				
-                                <div class="login">
+                                <?php 
+                            if (isset ($_SESSION['steamid']))
+                            {?>    
+                                <div class="logout">
+                                    <button class="logoutbtn"><a href="union/logins/logout.php">Logout</a></button>
+                                </div><?php } ?>
+                            
+                            <?php 
+                            if (isset($_SESSION['FaceName']))
+                            {?>    
+                                <div class="logout">
+                                    <button class="logoutbtn"><a href="union/logins/logout.php">Logout</a></button>
+                                </div><?php } ?>
+                            
+                            <?php
+                            if (!isset($_SESSION['FaceName']) && (!isset ($_SESSION['steamid'])))
+                            {?>
+                            <div class="login">
                                 <button class="dropbtn">Log in</button>
                                 <div class="dropdown-content">
-                                    <a href="logins/facebook/facebook_login.php">Facebook</a>
-                                    <a href="logins/steam/steam_login.php">Steam</a>
-                                    <a href="logins/google/google_login.php">Gmail</a>
-                                </div>
-                                </div>
+                                    <?php 
+                                    echo "<a href='".$_SESSION['loginURL']."'>Facebook</a>"; ?>
+                                    <?php echo loginbutton(); ?>
+                                    <a href="union/logins/google/google_login.php">Gmail</a>
+                                </div></div>
+                            <?php }?>
                                         </ul>
                                 </div>
 			</nav>
@@ -81,3 +102,4 @@ include_once 'session.php';
             <br>
             <br>
 
+<?php ob_end_flush();

@@ -7,7 +7,7 @@
                       'app_secret' => '0693cc16699f75bc8eee1d4047eda1d0',
                       'default_graph_version' => 'v2.10',
                     ]);
-	$redirect = 'http://localhost/frizerskatrgovina/union/index.php';
+	$redirect = 'http://localhost/frizerskatrgovina/prikaz_izdelkov.php';
 
 
 	# Create the login helper object
@@ -54,7 +54,7 @@
 		$_SESSION['FaceEmail'] = $userNode->getProperty('email');
                 $image = 'https://graph.facebook.com/'.$userNode->getId().'/picture?width=200';
 		$_SESSION['FaceImage'] = $image;
-		header("Location: index.php");
+		header("Location: prikaz_izdelkov.php");
 	}else{
 		$permissions  = ['email'];
 		$loginUrl = $helper->getLoginUrl($redirect,$permissions);

@@ -3,6 +3,6 @@
         session_destroy();
         unset ($_SESSION['steamid']);
         unset ($_SESSION['steam_uptodate']);
-	header ("Location: ../index.php");
+	header ("Location: ../../prikaz_izdelkov.php");
 
 

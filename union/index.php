@@ -93,13 +93,10 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
 						<li><a href="#" data-nav-section="pricing"><span>Pricing</span></a></li>
 						<li><a href="#" data-nav-section="services"><span>Services</span></a></li>
 						<li><a href="#" data-nav-section="team"><span>Team</span></a></li>
-<<<<<<< HEAD
 						<li><a href="#" data-nav-section="faq"><span>FAQ</span></a></li>                                               
 					</ul>     
-=======
 						<li><a href="#" data-nav-section="faq"><span>FAQ</span></a></li>                                                   
 					</ul>
->>>>>>> d2c8e65285a338a48c96dd1bc54d4cd62d5ece99
 				</div>
                             <?php 
                             if (isset ($_SESSION['steamid']))
