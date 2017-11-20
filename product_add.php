@@ -1,10 +1,11 @@
 <?php
 include_once 'union/oblika.php';
-?>
-
-         <?php
          include_once 'connection.php';
-        ?>
+         
+         
+ if (isset($_SESSION['potrjen'])&&($_SESSION['potrjen']==1)) 
+                                             {
+?>
 
 <div class="ok">
     <h1 style="color: red">DODAJ IZDELKE</h1>
@@ -55,3 +56,14 @@ include_once 'union/oblika.php';
     <input type="reset" value="Prekliči" />
 </form>
 </div>
+
+<?php
+                                             }
+                                             
+                                             
+ else 
+ {
+      header("Location: prikaz_izdelkov.php");
+ }
+ 
+ ?>

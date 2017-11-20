@@ -1,4 +1,5 @@
 <?php
+include_once 'union/oblika.php';
 include_once 'connection.php';
 ?>
     <h1>DODAJ KATEGORIJE</h1>
