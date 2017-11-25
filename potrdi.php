@@ -1,7 +1,12 @@
 <?php
 include_once 'union/oblika.php';
 include_once 'connection.php';
+
+         
+ if (isset($_SESSION['potrjen'])&&($_SESSION['potrjen']==1)) 
+                                             {
 ?>
+
 
         <table border="2" class="potrditev">
             <tr>
@@ -70,3 +75,12 @@ while ($row = mysqli_fetch_array($result)) {
 }
         ?>
         </table>
+
+<?php
+           }
+           
+            else 
+ {
+      header("Location: prikaz_izdelkov.php");
+ }
+    ?>
