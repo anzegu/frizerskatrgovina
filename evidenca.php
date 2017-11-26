@@ -32,5 +32,5 @@ $row = mysqli_num_rows($result);
 echo '</div>';
 }
 }else{
-    header("Refresh: prikaz_izdelkov.php");
+    header("Location: prikaz_izdelkov.php");
 }
