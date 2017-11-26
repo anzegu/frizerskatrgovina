@@ -14,13 +14,13 @@ try {
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'mail.smtp2go.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'ozbej';                 // SMTP username
-    $mail->Password = 'MXN3Y2s3emRmd24w';                           // SMTP password
+    $mail->Username = 'frizerskatrgovina123@gmail.com';                 // SMTP username
+    $mail->Password = 'W0E0z3FleXJn';                           // SMTP password
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-    $mail->Port = 587;                                    // TCP port to connect to
+    $mail->Port = 2525;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('ozbej.golob@gmail.com', 'Frizerska trgovina');
+    $mail->setFrom('frizerskatrgovina123@gmail.com', 'Frizerska trgovina');
     
     $mail->addAddress('ozbej.golob@gmail.com');     // Add a recipient
 
