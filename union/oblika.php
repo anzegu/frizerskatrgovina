@@ -3,8 +3,6 @@ include_once 'session.php';
 ob_start();
 require 'union/logins/facebook_v2/facebookLogin.php';
 require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
-require 'logins/google_cw/gpConfig.php';
-require 'logins/google_cw/User.php';
 ?>
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
