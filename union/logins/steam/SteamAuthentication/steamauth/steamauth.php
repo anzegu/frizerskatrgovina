@@ -11,19 +11,20 @@
 </style>
 
 <?php
-ob_start();
 
-function logoutbutton() {
+/* function logoutbutton() {
         echo "<h2>Odjavite se:</h2><br>";
-	echo "<form action='' method='get'><button class='steam_logout' name='logout' type='submit'>Logout</button></form>"; //logout button
-}
+	echo "<form action='' method='get'><button class='steam_logout' name='logout' type='submit'>Logout</button></form>"; //logout button 
+} */
 
+if(!function_exists('loginbutton')) {
 function loginbutton($buttonstyle = "square") {
 	$button['rectangle'] = "01";
 	$button['square'] = "02";
 	$button = "<a href='?login'>Steam</a>";
 	
 	echo $button;
+}
 }
 
 if (isset($_GET['login'])){
@@ -83,5 +84,4 @@ if (isset($_GET['update'])){
 }
 
 // Version 3.2
-
 ?>

@@ -54,6 +54,13 @@
 		$_SESSION['FaceEmail'] = $userNode->getProperty('email');
                 $image = 'https://graph.facebook.com/'.$userNode->getId().'/picture?width=200';
 		$_SESSION['FaceImage'] = $image;
+                
+                //REGISTER--------------------------------------
+                require 'connection.php';       
+                $sql = "INSERT INTO uporabniki (ime, e_mail) ".
+                       "VALUES ('".$_SESSION['FaceName']."', '".$_SESSION['FaceEmail']."');";   
+                $result = mysqli_query($link, $sql);
+                
 		header("Location: prikaz_izdelkov.php");
 	}else{
 		$permissions  = ['email'];

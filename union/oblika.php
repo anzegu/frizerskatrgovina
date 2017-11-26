@@ -2,7 +2,9 @@
 include_once 'session.php';
 ob_start();
 require 'union/logins/facebook_v2/facebookLogin.php';
-require 'union/logins/steam/SteamAuthentication/steamauth/steamauth.php';
+require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
+require 'logins/google_cw/gpConfig.php';
+require 'logins/google_cw/User.php';
 ?>
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
@@ -67,7 +69,13 @@ require 'union/logins/steam/SteamAuthentication/steamauth/steamauth.php';
 				
                                 <?php 
                             if (isset ($_SESSION['steamid']))
-                            {?>    
+                            {
+                                require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
+                                require 'logins/steam/SteamAuthentication/steamauth/userInfo.php';
+                                require 'connection.php';       
+                                $sql = "INSERT INTO uporabniki (ime) ".
+                                       "VALUES ('".$_SESSION['steam_personaname']."');";   
+                                $result = mysqli_query($link, $sql);?>    
                                 <div class="logout">
                                     <button class="logoutbtn"><a href="union/logins/logout.php">Logout</a></button>
                                 </div><?php } ?>
@@ -88,7 +96,9 @@ require 'union/logins/steam/SteamAuthentication/steamauth/steamauth.php';
                                     <?php 
                                     echo "<a href='".$_SESSION['loginURL']."'>Facebook</a>"; ?>
                                     <?php echo loginbutton(); ?>
-                                    <a href="union/logins/google/google_login.php">Gmail</a>
+                                    <?php
+                                    $authUrl = $gClient->createAuthUrl(); ?>
+                                    <a href=<?php filter_var($authUrl, FILTER_SANITIZE_URL) ?>>Gmail</a>
                                 </div></div>
                             <?php }?>
                                         </ul>
