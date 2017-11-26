@@ -56,11 +56,16 @@
 		$_SESSION['FaceImage'] = $image;
                 
                 //REGISTER--------------------------------------
-                require 'connection.php';       
+                require 'connection.php';
+                $check = "SELECT * FROM uporabniki WHERE e_mail = '".$_SESSION['FaceEmail']."';";
+                $result = mysqli_query($link, $check);
+                $st = mysqli_num_rows ($result);
+                if ($st == 0)
+                {
                 $sql = "INSERT INTO uporabniki (ime, e_mail) ".
                        "VALUES ('".$_SESSION['FaceName']."', '".$_SESSION['FaceEmail']."');";   
                 $result = mysqli_query($link, $sql);
-                
+                }
 		header("Location: prikaz_izdelkov.php");
 	}else{
 		$permissions  = ['email'];

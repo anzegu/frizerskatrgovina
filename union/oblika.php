@@ -72,10 +72,15 @@ require 'logins/google_cw/User.php';
                             {
                                 require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
                                 require 'logins/steam/SteamAuthentication/steamauth/userInfo.php';
-                                require 'connection.php';       
+                                require 'connection.php'; 
+                                $check = "SELECT * FROM uporabniki WHERE ime = '".$_SESSION['steam_personaname']."';";
+                                $result = mysqli_query($link, $check);
+                                $st = mysqli_num_rows ($result);
+                                if ($st == 0)               
+                                {
                                 $sql = "INSERT INTO uporabniki (ime) ".
                                        "VALUES ('".$_SESSION['steam_personaname']."');";   
-                                $result = mysqli_query($link, $sql);?>    
+                                $result = mysqli_query($link, $sql); }?>    
                                 <div class="logout">
                                     <button class="logoutbtn"><a href="union/logins/logout.php">Logout</a></button>
                                 </div><?php } ?>
