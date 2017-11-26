@@ -72,7 +72,7 @@ echo '<div>';
             <p>
                  <form action="akcijska_cena.php" method="post">
        <input type="hidden" name="id" value=<?php echo $id; ?> />
-       <input   type="number" name="popust" placeholder="Vnesite popust v %"/><br />
+       <input   type="number" name="popust" min="1" max="99" placeholder="Vnesite popust v %"/><br />
        <input type="submit" value="Posodobi" name="submit" />
        <input type="reset" value="Prekliči" />
        <input type="submit" value="Izbriši Akcijsko Ceno" name="delete" />

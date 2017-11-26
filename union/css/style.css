@@ -1238,7 +1238,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .kosarica{
-     position: relative;
+    position: fixed;
     left: 1300px; 
    
 }
@@ -1276,9 +1276,9 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .ok{
-        position: relative;
+    position: relative;
     left: 130px; 
-     width:500px;
+    width:500px;
     height:500px;
     margin-right:10px;
     float:left;
@@ -1288,7 +1288,6 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     left: 130px; 
     
- 
 }
 
 .potrditev{
@@ -1297,4 +1296,19 @@ h1, h2, h3, h4, h5, h6 {
      width:700px;
     margin-right:10px;
     float:left;
+}
+
+.komentarji_crtica{
+    border-bottom: 4px dotted #969494;
+    width: 800px;
+}
+
+
+.textarea_info{
+    resize: none;
+}
+
+.vsebina{
+    max-width: 800px;
+    word-wrap: break-word;
 }

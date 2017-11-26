@@ -10,7 +10,7 @@
     $query = sprintf("SELECT * FROM uporabniki WHERE e_mail = '$email' AND geslo = '$user_pass'",
         mysqli_real_escape_string($link, $email));
         $result = mysqli_query($link, $query);
-        echo $query;
+        //echo $query;
     
     if (mysqli_num_rows($result) == 1) {
         // vse je ok
@@ -20,12 +20,13 @@
         $_SESSION['priimek'] = $user['priimek'];
         $_SESSION['potrjen'] = $user['potrjen'];
 
-        header("Location: index.php");
+        header("Location: prikaz_izdelkov.php");
     }
     else {
       
         //napaka v podatkih, preusmeritev nazaj
         //na login
-        //header("Location: login_check_lol.php");        
+        
+        echo "napačni podatki";
     }
 ?>
