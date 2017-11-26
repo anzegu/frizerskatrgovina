@@ -101,9 +101,7 @@ require 'logins/google_cw/User.php';
                                     <?php 
                                     echo "<a href='".$_SESSION['loginURL']."'>Facebook</a>"; ?>
                                     <?php echo loginbutton(); ?>
-                                    <?php
-                                    $authUrl = $gClient->createAuthUrl(); ?>
-                                    <a href=<?php filter_var($authUrl, FILTER_SANITIZE_URL) ?>>Gmail</a>
+                                    <a href="#">Gmail</a>
                                 </div></div>
                             <?php }?>
                                         </ul>
