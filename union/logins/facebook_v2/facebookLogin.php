@@ -54,7 +54,22 @@
 		$_SESSION['FaceEmail'] = $userNode->getProperty('email');
                 $image = 'https://graph.facebook.com/'.$userNode->getId().'/picture?width=200';
 		$_SESSION['FaceImage'] = $image;
-                
+                //login_check
+                include_once 'connection.php';
+                include_once 'session.php';
+    
+        $query = sprintf("SELECT * FROM uporabniki WHERE e_mail = '".$_SESSION['FaceEmail']."';",
+        mysqli_real_escape_string($link, $_SESSION['FaceEmail']));
+        $result = mysqli_query($link, $query);
+        //echo $query;
+    
+        if (mysqli_num_rows($result) == 1) 
+        {
+        // vse je ok
+        $user = mysqli_fetch_array($result);
+         $_SESSION['user_id'] = $user['id'];
+        $_SESSION['potrjen'] = $user['potrjen']; }
+        
                 //REGISTER--------------------------------------
                 require 'connection.php';
                 $check = "SELECT * FROM uporabniki WHERE e_mail = '".$_SESSION['FaceEmail']."';";
