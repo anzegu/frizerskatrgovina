@@ -31,6 +31,8 @@ $query4 = "INSERT INTO racuni (kosarica_id, st, skupna_cena, datum)
     } else {
         echo "Error: " . $query4 . "<br>" . mysqli_error($link);
     }
+    $rid = mysqli_insert_id($link);
+    $_SESSION['rid']=$rid;
     
 
 $query = "UPDATE kosarice SET status = '1' WHERE id = $kosarica_id";
