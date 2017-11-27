@@ -62,6 +62,7 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
                                                 echo '<li class="active"><a href="product_add.php" data-nav-section="explore"><span>Dodaj izdelke</span></a></li>'; 
                                                 echo '<li class="active"><a href="potrdi.php" data-nav-section="explore"><span>Potrdi uporabnike</span></a></li>';
                                             }
+  
                                         ?>                                             
 					
 				
@@ -102,6 +103,15 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
                                     <a href="#">Gmail</a>
                                 </div></div>
                             <?php }?>
+                                                
+                                                
+                                           <?php     
+                           
+                                if( isset($_SESSION["user_id"]) ){
+                                     echo '<li class="active"><a href="profil.php" data-nav-section="explore"><span>Profil</span></a></li>';
+                              
+                                                        }   
+                                            ?>
                                         </ul>
                                 </div>
 			</nav>
