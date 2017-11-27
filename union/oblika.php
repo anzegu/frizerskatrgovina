@@ -61,6 +61,7 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
                                              {
                                                 echo '<li class="active"><a href="product_add.php" data-nav-section="explore"><span>Dodaj izdelke</span></a></li>'; 
                                                 echo '<li class="active"><a href="potrdi.php" data-nav-section="explore"><span>Potrdi uporabnike</span></a></li>';
+                                                echo '<li class="active"><a href="sd.php" data-nav-section="explore"><span>Izpis</span></a></li>';
                                             }
                                         ?>                                             
 					
