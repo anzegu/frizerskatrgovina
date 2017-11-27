@@ -24,7 +24,9 @@ include_once 'connection.php';
    
         <?php
         
-$query = "SELECT * FROM uporabniki WHERE potrjen = 0 ";
+        
+        
+$query = "SELECT * FROM uporabniki WHERE potrjen = 0 AND salon_id IS NOT NULL";
 $result = mysqli_query($link, $query);
 
 while ($row = mysqli_fetch_array($result)) {
