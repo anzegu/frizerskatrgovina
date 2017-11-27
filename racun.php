@@ -90,8 +90,8 @@ $query = "SELECT k.skupna_cena FROM kosarice k WHERE uporabnik_id = $user_id AND
    echo '<td>NASLOV DOSTAVE:</td>';
    echo '</tr>';  
    
-   
-$query4 = "SELECT kr.*, kr.ime AS krIme, s.* FROM kraji kr INNER JOIN saloni s ON kr.id = s.kraj_id INNER JOIN uporabniki u ON s.id = u.salon_id";
+   $id = $_SESSION['user_id'];
+$query4 = "SELECT kr.*, kr.ime AS krIme, s.* FROM kraji kr INNER JOIN saloni s ON kr.id = s.kraj_id INNER JOIN uporabniki u ON s.id = u.salon_id where u.id=$id";
     $result4 = mysqli_query($link, $query4) or die(mysqli_error($link));
 
     while ($row = mysqli_fetch_array($result4)) {
