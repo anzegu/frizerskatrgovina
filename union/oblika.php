@@ -106,8 +106,16 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
                                     <button class="logoutbtn"><a href="union/logins/logout.php">Logout</a></button>
                                 </div><?php } ?>
                             
+                                                <?php 
+                            if (isset($_SESSION['priimek']))
+                            {?>    
+                                <div class="logout">
+                                    <button class="logoutbtn"><a href="union/logins/logout.php">Logout</a></button>
+                                </div><?php 
+                            } ?>
+                                                
                             <?php
-                            if (!isset($_SESSION['FaceName']) && (!isset ($_SESSION['steamid'])))
+                            if (!isset($_SESSION['FaceName']) && (!isset ($_SESSION['steamid'])) && (!isset($_SESSION['priimek'])))
                             {?>
                             <div class="login">
                                 <button class="dropbtn">Log in</button>
