@@ -15,7 +15,9 @@
         $user = mysqli_fetch_array($result);
          $_SESSION['user_id'] = $user['id'];
         $_SESSION['potrjen'] = $user['potrjen'];
-
+            
+        
+        
         header("Location: prikaz_izdelkov.php");
     }
     }
@@ -37,4 +39,4 @@
         header("Location: prikaz_izdelkov.php");
     }
     }
-    
+    else echo "Nisi prijavljen";
