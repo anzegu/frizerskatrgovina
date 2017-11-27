@@ -5,11 +5,12 @@
     
     $user = $_SESSION['user_id'];
     
-$query3 = "SELECT * FROM uporabniki";
+$query3 = "SELECT * FROM uporabniki WHERE id=$user";
 $result = mysqli_query($link, $query3) or die(mysqli_error($link));
 while ($row = mysqli_fetch_array($result)) {
     $salon_id = $row['salon_id'];
 }
+
 
 if ($salon_id==NULL){
 
