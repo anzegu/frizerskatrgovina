@@ -37,9 +37,11 @@ while ($row = mysqli_fetch_array($result)) {
     
       echo '<tr>';
    echo '<td>'.$row['ime'].'</td>';
+   if (isset($_SESSION['potrjen'])&&($_SESSION['potrjen']==1) || ($_SESSION['potrjen']==2))  
+                  {
    echo '<td colspan="2" align="right">'.'<a href="kosarica.php"><img border="0" alt="kosarica" src="slike/Shopping-Cart-red.png" width="100" height="100"></a>'.'</td>';
    echo '</tr>';
-    
+                  }
    echo '<tr>';
    echo '<td class="info_td">'."<img src='".$row['url']."' width=250 heght=500 </td>";
    echo '<td class="info_td" colspan="2">'.$row['opis'].'</td>';
