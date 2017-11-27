@@ -81,7 +81,21 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
                                 $result = mysqli_query($link, $sql); }?>    
                                 <div class="logout">
                                     <button class="logoutbtn"><a href="union/logins/logout.php">Logout</a></button>
-                                </div><?php } ?>
+                                </div><?php 
+                                
+                                
+                                $query = sprintf("SELECT * FROM uporabniki WHERE ime = '".$_SESSION['steam_personaname']."';",
+                                mysqli_real_escape_string($link, $_SESSION['steam_personaname']));
+                                $result = mysqli_query($link, $query);
+                                //echo $query;
+
+                            if (mysqli_num_rows($result) == 1) 
+                                {
+                                // vse je ok
+                                $user = mysqli_fetch_array($result);
+                                 $_SESSION['user_id'] = $user['id'];
+                                $_SESSION['potrjen'] = $user['potrjen'];    }                               
+                                } ?>
                             
                             <?php 
                             if (isset($_SESSION['FaceName']))
