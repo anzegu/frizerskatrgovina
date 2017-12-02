@@ -77,6 +77,20 @@ if ($salon_id==NULL){
    echo '<tr>';
    echo '<td>'."Telefon: ".$row['tel'].'</td>';
    echo '</tr>'; 
+   
+   echo '<tr height="50px">';
+   echo '<td>'."".'</td>';
+   echo '</tr>'; 
+   
+   echo '<tr>';
+   echo '<td>'; 
+   echo '<div class="gumb_vec">';
+   echo '<div class="gumb_vec1">';
+   echo'<a href="uredi_profil.php?id='.$user.'" class="btn btn-select-plan btn-sm">UREDI</a>';
+   echo '</div>';
+   echo '</div>';
+   echo '</td>'; 
+   echo '</tr>'; 
 
 }  
 
