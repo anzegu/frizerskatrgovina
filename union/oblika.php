@@ -41,7 +41,7 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
         </style>
 	</head>
 	<body style="background: #f1faff;">
-	<header role="banner" id="fh5co-header">
+            <header role="banner" id="fh5co-header">
 		<div class="fluid-container">
 			<nav class="navbar navbar-default">
 				<div class="navbar-header">

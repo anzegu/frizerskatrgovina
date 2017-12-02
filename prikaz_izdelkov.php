@@ -3,20 +3,9 @@ include_once 'union/oblika.php';
 ?>
 
 
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-         
-    </head>
-    <body >
-    
 <?php
 include_once 'session.php';
 include_once 'connection.php';
-
-
-
 
 
 echo '<div style=";margin: -60px 25% 0 25%; text-align: center"><form method="post" action="prikaz_izdelkov.php"><input placeholder="Išči izdelek ..." type="text" name="search" style="height: 35px; width: 200px; padding: 5px; border: 3px solid grey; border-radius: 25px" required/></form></div>';
@@ -40,7 +29,7 @@ while ($row = mysqli_fetch_array($result)) {
    $id = $row['id'];
    
 echo '<div>';
- echo '<div class= "product_box">';
+ echo '<div class = "product_box">';
    echo '<p>';
      if (isset($_SESSION['potrjen'])&&($_SESSION['potrjen']==1)){  
    echo '<a href="izdelek_delete.php?id='.$id.'" onclick="return confirm(\'Are you sure?\')">DELETE</a>';
@@ -86,15 +75,9 @@ echo '<div>';
             
             <?php
             }
-     ?>
-            <?php
-            
-           
          echo '</div>';
          echo '</div>';
 }
-
-
 ?>
        
        <?php
@@ -103,9 +86,8 @@ echo '<div>';
     $opozorilo = $_GET['opozorilo'];
     echo "<script type='text/javascript'>alert('Za ogled se prijavi!')</script>";
 }
+
 }
 echo '</div>';
 ?>
-   
-    </body>
-</html>
+
