@@ -33,6 +33,8 @@ echo '<div>';
    echo '<p>';
      if (isset($_SESSION['potrjen'])&&($_SESSION['potrjen']==1)){  
    echo '<a href="izdelek_delete.php?id='.$id.'" onclick="return confirm(\'Are you sure?\')">DELETE</a>';
+   echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp';
+   echo '<a href="uredi_izdelke.php?id='.$id.'">UREDI</a>';
    }
      echo '</p>';
    
