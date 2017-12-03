@@ -7,12 +7,12 @@ $user_id = $_SESSION['user_id'];
 
 
 
-<<<<<<< HEAD
+
 echo '<table class="tabela_kosarica"  width="85%" >';
-=======
+
 echo '<div class="row">
 					<div class="col-md-6 col-md-offset-3 to-animate"><table class="tabela_kosarica to-animate">';
->>>>>>> 32d779e11072d265eca51f323892e1bc6d9319aa
+
 
 $query = "SELECT k.id, k.skupna_cena, k.status FROM kosarice k WHERE uporabnik_id = $user_id";
 $result = mysqli_query($link, $query) or die(mysqli_error($link));
@@ -35,15 +35,15 @@ while ($row = mysqli_fetch_array($result)) {
 
     
    echo '<tr>';
-<<<<<<< HEAD
+
    echo '<td width="300px">'."<img src='".$row['url']."' width=100px heght=100px </td>";
  
    echo '<td>'.'<p style="color: red">'.$row['ime'].'</p>'.'</td>';
-=======
+
    echo '<td>'."<img src='../".$row['url']."' height=50px ></td>";
  
    echo '<td>'.$row['ime'].'</td>';
->>>>>>> 32d779e11072d265eca51f323892e1bc6d9319aa
+
 
    //echo '<td>'."CENA: ".$row['cena']."$".'<br>';
    
@@ -66,8 +66,6 @@ echo '<td width="50%">'." ".'</td>';
    }
    //echo '</td>';
    
-   
-
  
    echo '<form method="post" action="kosarica_delete.php">';
    echo '<input type="hidden" name="kosarica_id" value="'.$kosarica_id.'">';
@@ -95,8 +93,7 @@ echo '<td width="50%">'." ".'</td>';
    echo '</tr>';
    
    
-<<<<<<< HEAD
-=======
+
    
    echo '<tr>';
    echo '<td>';
@@ -111,7 +108,7 @@ echo '<td width="50%">'." ".'</td>';
    
    
   
->>>>>>> 32d779e11072d265eca51f323892e1bc6d9319aa
+
    /*
    echo '<tr>';
    echo '<td>'."SKUPNA CENA: ".$row['skupna_cena'].'</td>';
