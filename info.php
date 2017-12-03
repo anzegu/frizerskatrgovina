@@ -214,7 +214,7 @@ $query = "SELECT k.id, k.vsebina, k.datum, u.e_mail FROM komentarji k INNER JOIN
         echo '<td>';
             echo '<div class="komentarji_crtica">';
                 if (isset($_SESSION['potrjen'])&&($_SESSION['potrjen']==1)){ 
-                    echo "<a href = 'delete_comments.php?kom_id=$kom_id&izdelek_id=$izdelek_id'> DELETE </a>";
+                    echo "<a href = '../delete_comments.php?kom_id=$kom_id&izdelek_id=$izdelek_id'> DELETE </a>";
             echo '</td>';
     echo '</tr>';
    }
