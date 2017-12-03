@@ -27,7 +27,7 @@ $query4 = "INSERT INTO racuni (kosarica_id, st, skupna_cena, datum)
                           VALUES ('$kosarica_id', '$st', '$skupna_cena', NOW())";
        
     if (mysqli_query($link, $query4)) {
-        echo "New record created successfully";
+        echo "";
     } else {
         echo "Error: " . $query4 . "<br>" . mysqli_error($link);
     }
@@ -43,6 +43,4 @@ $query = "UPDATE kosarice SET status = '1' WHERE id = $kosarica_id";
     } else {
         echo "Error: " . $query . "<br>" . mysqli_error($link);
     }
-
-    
-header("Location: prikaz_izdelkov.php");
+include 'excel.php';

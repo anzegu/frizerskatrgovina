@@ -10,7 +10,8 @@ $result = mysqli_query($link, $query);
 echo '<div style="text-align: center; color: white">';
 while($rows = mysqli_fetch_assoc($result)){
     echo $ime = $rows['ime'].'<br>';
-    echo $email = $rows['e_mail'].'<br>';
+    echo $email = $rows['e_mail'] ; echo '<br>';
+    $_SESSION['gmail'] = $email;
     echo $tel = $rows['tel'].'<br><br>';
     echo $sime = $rows['sime'].'<br>';
     echo $naslov = $rows['naslov'].'<br>';
@@ -34,8 +35,11 @@ if($row!=0){
         echo '<img src="../'.$slika = $rows2['url'].'" height="50px"><br>';
         }
         echo '<br><b>'.$skupna_cena = $rows['skupna_cena'].'€</b><br>';
-        
-        echo '</div>';        
+        ?>  <form method="post" action="union/PHPMailer/mail_posta/index.php">
+    <input type="submit" name="export_excel" class="btn btn-success" value="Pošlji mail">
+</form>
+
+        <?php echo '</div>';        
     }
 }
 echo '</div>';
