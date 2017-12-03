@@ -130,23 +130,9 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
 	</header>
 
 	<section id="fh5co-home" data-section="home" style="background-image: url(images/full_image_3.jpg);" data-stellar-background-ratio="0.5">
-		<div class="gradient"></div>
-		<div class="container">
-			<div class="text-wrap">
-				<div class="text-inner">
-					<div class="row">
-						<div class="col-md-8 col-md-offset-2">
-							<h1 class="to-animate">Union One Page template for everyone</h1>
-							<h2 class="to-animate">100% Free HTML5 Template. Licensed under <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons Attribution 3.0.</a> <br> Crafted with love by <a href="http://freehtml5.co/" target="_blank" title="Free HTML5 Bootstrap Templates" class="fh5co-link">FREEHTML5.co</a></h2>
-							<div class="call-to-action">
-								<a href="lep.php" class="demo to-animate">Demo</a>
-								<a href="#" class="download to-animate">Download</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		<div class="gradient"><?php
+                include_once "../prikaz_izdelkov.php";
+                ?></div>		
 	</section>
 
 	<section id="fh5co-explore" data-section="explore">

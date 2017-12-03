@@ -1,5 +1,5 @@
 <?php
-include_once 'union/oblika.php';
+//include_once 'union/oblika.php';
 ?>
 
 
@@ -8,7 +8,7 @@ include_once 'session.php';
 include_once 'connection.php';
 
 
-echo '<div style=";margin: -60px 25% 0 25%; text-align: center"><form method="post" action="prikaz_izdelkov.php"><input placeholder="Išči izdelek ..." type="text" name="search" style="height: 35px; width: 200px; padding: 5px; border: 3px solid grey; border-radius: 25px" required/></form></div>';
+echo '<br><br><br><br><div style=";margin: -60px 25% 0 25%; text-align: center"><form method="post" action="prikaz_izdelkov.php"><input placeholder="Išči izdelek ..." type="text" name="search" style="height: 35px; width: 200px; padding: 5px; border: 3px solid grey; border-radius: 25px" required/></form></div>';
 echo '<div style="margin: 0 6% 6% 6%">';
 if(isset($_POST['search'])){
     $ime = $_POST['search'];
@@ -40,7 +40,7 @@ echo '<div>';
    
    //echo '<td>'."<img src='".$row['url']."' width=250 heght=500 </td>";
     $url = $row['url'];
-   echo "<p><a href=\"info.php?id=".$id."\"><img src=\"$url\" width=250 height=250/></a></p>";
+   echo '<p><a href="info.php?id="'.$id.'"><img src="../'.$url.'" width=250 height=250/></a></p>';
 
    echo '<p>'.$row['ime'].'</td>';
 
@@ -91,5 +91,5 @@ echo '<div>';
 
 }
 echo '</div>';
-?>
+
 
