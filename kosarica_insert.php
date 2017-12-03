@@ -99,4 +99,4 @@ $query = "UPDATE izdelki SET kolicina = '$rez' WHERE id = $id";
 
 
 }
-header("Location: info.php?id=$id");
+header("Location: union/index.php#fh5co-pricing");
