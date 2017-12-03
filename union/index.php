@@ -91,11 +91,10 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
 						<?php  if(isset($_SESSION['potrjen'])&&$_SESSION['potrjen']==1){ ?>
                                                 <li><a href="#" data-nav-section="explore"><span>Evidenca</span></a></li>
 						<li><a href="#" data-nav-section="testimony"><span>Profil</span></a></li>
-						<li><a href="#" data-nav-section="pricing"><span>Pricing</span></a></li>
-                                                <?php } ?>        
-						<li><a href="#" data-nav-section="services"><span>Services</span></a></li>
-						<li><a href="#" data-nav-section="team"><span>Team</span></a></li>
-						<li><a href="#" data-nav-section="faq"><span>FAQ</span></a></li>                                               
+						<li><a href="#" data-nav-section="pricing"><span>Košarica</span></a></li>
+                                                <?php if(isset($_GET['id'])){    ?>  
+						<li><a href="#" data-nav-section="services"><span>Izdelek</span></a></li>
+                                                <?php }} ?>  						                                             
 					</ul>     
 				</div>
                             <?php 
@@ -208,192 +207,20 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
 			</div>
 		</div>
 	</section>
-
+<?php if(isset($_GET['id'])){ ?>
 	<section id="fh5co-services" data-section="services">
 		<div class="fh5co-services">
 			<div class="container">
+                            <div class="col-md-12 section-heading text-center">
+						<h2 class="to-animate">Izdelek</h2>
+					</div>
 				<div class="row">
-					<div class="col-md-12 section-heading text-center">
-						<h2 class="to-animate">We Offer Services</h2>
-						<div class="row">
-							<div class="col-md-8 col-md-offset-2 subtext">
-								<h3 class="to-animate">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove. </h3>
-							</div>
-						</div>
-					</div>
+                                    <?php include_once "../info.php"; ?>					
 				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<div class="box-services">
-							<i class="icon-chemistry to-animate-2"></i>
-							<div class="fh5co-post to-animate">
-								<h3>Hand-crafted with Detailed</h3>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in.</p>
-							</div>
-						</div>
-
-						<div class="box-services">
-							<i class="icon-energy to-animate-2"></i>
-							<div class="fh5co-post to-animate">
-								<h3>Light and Fast</h3>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="box-services">
-							<i class="icon-trophy to-animate-2"></i>
-							<div class="fh5co-post to-animate">
-								<h3>Award-winning Landing Page</h3>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in.</p>
-							</div>
-						</div>
-
-						<div class="box-services">
-							<i class="icon-paper-plane to-animate-2"></i>
-							<div class="fh5co-post to-animate">
-								<h3>Sleek and Smooth Animation</h3>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="box-services">
-							<i class="icon-people to-animate-2"></i>
-							<div class="fh5co-post to-animate">
-								<h3>Satisfied &amp; Happy Clients</h3>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in.</p>
-							</div>
-						</div>
-
-						<div class="box-services">
-							<i class="icon-screen-desktop to-animate-2"></i>
-							<div class="fh5co-post to-animate">
-								<h3>Looks Amazing on Devices</h3>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="call-to-action text-center to-animate"><a href="#" class="btn btn-learn">Learn More</a></div>
-			</div>
+                        </div>
 		</div>
 	</section>	
-
-	<section id="fh5co-team" data-section="team">
-		<div class="fh5co-team">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 section-heading text-center">
-						<h2 class="to-animate">Meet The Team</h2>
-						<div class="row">
-							<div class="col-md-8 col-md-offset-2 subtext">
-								<h3 class="to-animate">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove. </h3>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<div class="team-box text-center to-animate-2">
-							<div class="user"><img class="img-reponsive" src="images/person4.jpg" alt="Roger Garfield"></div>
-							<h3>Roger Garfield</h3>
-							<span class="position">Co-Founder, Lead Developer</span>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-							<ul class="social-media">
-								<li><a href="#" class="facebook"><i class="icon-facebook"></i></a></li>
-								<li><a href="#" class="twitter"><i class="icon-twitter"></i></a></li>
-								<li><a href="#" class="dribbble"><i class="icon-dribbble"></i></a></li>
-								<li><a href="#" class="codepen"><i class="icon-codepen"></i></a></li>
-								<li><a href="#" class="github"><i class="icon-github-alt"></i></a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="col-md-4">
-						<div class="team-box text-center to-animate-2">
-							<div class="user"><img class="img-reponsive" src="images/person2.jpg" alt="Roger Garfield"></div>
-							<h3>Kevin Steve</h3>
-							<span class="position">Co-Founder, Product Designer</span>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-							<ul class="social-media">
-								<li><a href="#" class="facebook"><i class="icon-facebook"></i></a></li>
-								<li><a href="#" class="twitter"><i class="icon-twitter"></i></a></li>
-								<li><a href="#" class="dribbble"><i class="icon-dribbble"></i></a></li>
-								<li><a href="#" class="codepen"><i class="icon-codepen"></i></a></li>
-								<li><a href="#" class="github"><i class="icon-github-alt"></i></a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="col-md-4">
-						<div class="team-box text-center to-animate-2">
-							<div class="user"><img class="img-reponsive" src="images/person3.jpg" alt="Roger Garfield"></div>
-							<h3>Ross Standford</h3>
-							<span class="position">Full Stack Developer</span>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-							<ul class="social-media">
-								<li><a href="#" class="facebook"><i class="icon-facebook"></i></a></li>
-								<li><a href="#" class="twitter"><i class="icon-twitter"></i></a></li>
-								<li><a href="#" class="dribbble"><i class="icon-dribbble"></i></a></li>
-								<li><a href="#" class="codepen"><i class="icon-codepen"></i></a></li>
-								<li><a href="#" class="github"><i class="icon-github-alt"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section id="fh5co-faq" data-section="faq">
-		<div class="fh5co-faq">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 section-heading text-center">
-						<h2 class="to-animate">Common Questions</h2>
-						<div class="row">
-							<div class="col-md-8 col-md-offset-2 subtext">
-								<h3 class="to-animate">Everything you need to know before you get started</h3>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-6">
-						<div class="box-faq to-animate-2">
-							<h3>What is Union?</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-						</div>
-						<div class="box-faq to-animate-2">
-							<h3>I have technical problem, who do I email? </h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-						</div>
-						<div class="box-faq to-animate-2">
-							<h3>How do I use Bato features?</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-						</div>
-					</div>
-
-					<div class="col-md-6">
-						<div class="box-faq to-animate-2">
-							<h3>What language are available?</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-						</div>
-						<div class="box-faq to-animate-2">
-							<h3>Can I have a username that is already taken?</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-						</div>
-						<div class="box-faq to-animate-2">
-							<h3>Is Union free?</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
+<?php } ?>
 	<hr>
 
 	<section id="fh5co-trusted" data-section="trusted">
