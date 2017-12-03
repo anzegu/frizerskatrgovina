@@ -67,9 +67,32 @@ while ($row = mysqli_fetch_array($result)) {
    echo '</td>';
    echo '</tr>';
    
+   echo '<tr>';
+   echo '<td>';
+   if($kolicina_izdelkov<=10 && $kolicina_izdelkov!=0)
+   {
+   echo '<p style="color: red">'."Na zalogi samo še: ".$kolicina_izdelkov.'</p>';
+   }
+   elseif ($kolicina_izdelkov==0)
+   {
+       echo '<p style="color: red">'."Izdelek trenutno ni na voljo!".'</p>';
+   }
+   else
+   {
+       echo '<p>'."Na voljo".'</p>';
+   }
+   echo '</td>';
+   echo '</tr>';
+   
+    echo '<tr height="50px">';
+   echo '<td>';
+   
+   echo '</td>';
+   echo '</tr>';
 }
 
-
+        if($kolicina_izdelkov>=1)
+        {
             if (isset($_SESSION['potrjen'])&&($_SESSION['potrjen']==1) || ($_SESSION['potrjen']==2))  
                   {
                 echo '<tr>';
@@ -93,6 +116,8 @@ while ($row = mysqli_fetch_array($result)) {
                       echo '</td>';
                        echo '</tr>';
                   }
+        }
+
                  
 ?>
     
