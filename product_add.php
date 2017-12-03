@@ -32,7 +32,7 @@
     $row=  mysqli_num_rows($result);
    while ($row = mysqli_fetch_array($result)) {
 
-       echo "<input type='checkbox' required='required' name='kategorije[]' value='".$row['id']."'>"
+       echo "<input type='checkbox'  name='kategorije[]' value='".$row['id']."'>"
         .$row['ime']." &nbsp";
        
    }
