@@ -10,6 +10,6 @@
     
     $query = "UPDATE izdelki SET ime = '$ime', opis = '$opis', cena = '$cena', kolicina = '$kolicina_izdelkov' WHERE id = '$id';";
     mysqli_query($link, $query);
-    header("Location: prikaz_izdelkov.php");
+    header("Location: union/index.php");
     
     ?>

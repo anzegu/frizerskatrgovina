@@ -100,6 +100,7 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
                             <?php 
                             if (isset ($_SESSION['steamid']))
                             {?>    
+                            <div style="margin: -50px 0 0 0">
                                 <div class="logout">
                                     <button class="logoutbtn"><a href="logins/logout.php">Logout</a></button>
                                 </div><?php } ?>
@@ -121,7 +122,7 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
                                     echo "<a href='".$_SESSION['loginURL']."'>Facebook</a>"; ?>
                                     <?php echo loginbutton(); ?>
                                     <a href="logins/google/google_login.php">Gmail</a>
-                                </div></div>
+                                </div></div></div>
                             <?php }?>
                             
 			</nav>
@@ -139,6 +140,7 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
 			<?php
                         include_once "../evidenca.php";
                         ?>
+                </div>    
 	</section>
         
 	<section id="fh5co-testimony" data-section="testimony">
@@ -188,7 +190,7 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
 			</div>
 		</div>
 	</div>
-	
+<?php if(isset($_SESSION['user_id']))	{ ?>
 	<section id="fh5co-pricing" data-section="pricing">
 		<div class="fh5co-pricing">
 			<div class="container">
@@ -207,7 +209,7 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
 			</div>
 		</div>
 	</section>
-<?php if(isset($_GET['id'])){ ?>
+<?php } if(isset($_GET['id'])){ ?>
 	<section id="fh5co-services" data-section="services">
 		<div class="fh5co-services">
 			<div class="container">
@@ -222,67 +224,24 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
 	</section>	
 <?php } ?>
 	<hr>
-
+<?php if(isset($_GET['idu'])){ ?>
 	<section id="fh5co-trusted" data-section="trusted">
 		<div class="fh5co-trusted">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 section-heading text-center">
-						<h2 class="to-animate">Trusted By</h2>
+						<h2 class="to-animate">Uredi izdelke</h2>
 						<div class="row">
 							<div class="col-md-8 col-md-offset-2 subtext">
-								<h3 class="to-animate">We’re trusted by these popular companies</h3>
+								<?php include_once "../uredi_izdelke.php"; ?>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					 <div class="col-md-2 col-sm-3 col-xs-6 col-sm-offset-0 col-md-offset-1">
-					 	<div class="partner-logo to-animate-2">
-					 		<img src="images/logo1.png" alt="Partners" class="img-responsive">
-					 	</div>
-					 </div>
-				    <div class="col-md-2 col-sm-3 col-xs-6">
-				    	<div class="partner-logo to-animate-2">
-				    		<img src="images/logo2.png" alt="Partners" class="img-responsive">
-						</div>
-				    </div>
-				    <div class="col-md-2 col-sm-3 col-xs-6">
-				    	<div class="partner-logo to-animate-2">
-				    		<img src="images/logo3.png" alt="Partners" class="img-responsive">
-				    	</div>
-				    </div>
-				    <div class="col-md-2 col-sm-3 col-xs-6">
-				    	<div class="partner-logo to-animate-2">
-				    		<img src="images/logo4.png" alt="Partners" class="img-responsive">
-				    	</div>
-				    </div>
-				    <div class="col-md-2 col-sm-12 col-xs-12">
-				    	<div class="partner-logo to-animate-2">
-				    		<img src="images/logo5.png" alt="Partners" class="img-responsive">
-				    	</div>
-				    </div>
-				</div>
 			</div>
 		</div>
 	</section>
-
-	<div class="getting-started getting-started-2">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 to-animate">
-					<h3>Getting Started</h3>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-				</div>
-				<div class="col-md-6 to-animate-2">
-					<div class="call-to-action text-right">
-						<a href="#" class="sign-up">Sign Up For Free</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
+<?php } ?>
 	<div id="fh5co-footer" role="contentinfo">
 		<div class="container">
 			<div class="row">

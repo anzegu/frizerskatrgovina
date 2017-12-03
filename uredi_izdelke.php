@@ -1,9 +1,8 @@
 <?php
 
 include_once 'connection.php';
-include_once 'union/oblika.php';
- 
-$id = $_GET['id'];
+
+$id = $_GET['idu'];
 
 $query = "SELECT i.*, s.url FROM izdelki i INNER JOIN slike s ON i.id=s.izdelek_id WHERE i.id=$id"; 
 $result = mysqli_query($link, $query) or die(mysqli_error($link));
@@ -20,8 +19,7 @@ while ($row = mysqli_fetch_array($result)) {
 ?>
 
 <div class="ok">
-    <h1 style="color: red">UREDI IZDELKE</h1>
-<form action="uredi_izdelke_update.php" method="post" enctype="multipart/form-data">
+<form action="../uredi_izdelke_update.php" method="post" enctype="multipart/form-data">
     <input type="hidden" name="id" value="<?php echo $id ?>" />
      <p>Ime Izdelka: <br>
     <input  type="text" name="ime" value="<?php echo $ime ?>" />
@@ -41,4 +39,5 @@ while ($row = mysqli_fetch_array($result)) {
     
      <input type="submit" value="Vnesi" name="submit" />
     <input type="reset" value="Prekliči" />
+</form>
 </div>

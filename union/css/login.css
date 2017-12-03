@@ -17,8 +17,8 @@
 }
 
 .login {
-    float:right;
-    margin-bottom: 5px;
+    margin: -63px 0 0 200px;
+    float: left;
 }
 
 .dropdown-content {
@@ -64,8 +64,8 @@
 }
 
 .logout {
-    float:right;
-    margin-bottom: 5px;
+    margin: -63px 0 0 200px;
+    float: left;
 }
 
 .logout a {
