@@ -106,14 +106,14 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
                                 </div><?php } ?>
                             
                             <?php 
-                            if (isset($_SESSION['FaceName']))
+                            if (isset($_SESSION['priimek']))
                             {?>    
                                 <div class="logout">
                                     <button class="logoutbtn"><a href="logins/logout.php">Logout</a></button>
                                 </div><?php } ?>
                             
                             <?php
-                            if (!isset($_SESSION['FaceName']) && (!isset ($_SESSION['steamid'])))
+                            if (!isset($_SESSION['FaceName']) && (!isset ($_SESSION['steamid'])) && (!isset($_SESSION['priimek'])))
                             {?>
                             <div class="login">
                                 <button class="dropbtn">Log in</button>
@@ -178,21 +178,7 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
 		</div>
 	</section>
 <?php }?>
-	<div class="getting-started getting-started-1">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 to-animate">
-					<h3>Getting Started</h3>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-				</div>
-				<div class="col-md-6 to-animate-2">
-					<div class="call-to-action text-right">
-						<a href="#" class="sign-up">Sign Up For Free</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+            <hr>
 <?php if(isset($_SESSION['user_id']))	{ ?>
 	<section id="fh5co-pricing" data-section="pricing">
 		<div class="fh5co-pricing">

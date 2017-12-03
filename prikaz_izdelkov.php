@@ -41,7 +41,7 @@ echo '<div class="to-animate">';
 
    if ($row['akcijska_cena'] != null) {
        
-      echo '<p>'."Redna cena:  ".'<strike class="strike">';
+      echo '<p>'."Redna cena:  ".'<strike style="color: white" class="strike">';
         echo $row['cena']."$".'</p>';
       echo '</strike>';
    echo '<p style="color: red">'."AKCIJSKA CENA: ".$row['akcijska_cena']."$".'</p>';
