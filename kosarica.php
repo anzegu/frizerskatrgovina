@@ -1,8 +1,4 @@
 <?php
-include_once 'union/oblika.php';
-?>
-
-<?php
 
 include_once 'connection.php';
 include_once 'session.php';
@@ -11,7 +7,8 @@ $user_id = $_SESSION['user_id'];
 
 
 
-echo '<table class="tabela_kosarica">';
+echo '<div class="row">
+					<div class="col-md-6 col-md-offset-3 to-animate"><table class="tabela_kosarica to-animate">';
 
 $query = "SELECT k.id, k.skupna_cena, k.status FROM kosarice k WHERE uporabnik_id = $user_id";
 $result = mysqli_query($link, $query) or die(mysqli_error($link));
@@ -34,9 +31,9 @@ while ($row = mysqli_fetch_array($result)) {
 
     
    echo '<tr>';
-   echo '<td>'."<img src='".$row['url']."' width=250 heght=500 </td>";
+   echo '<td>'."<img src='../".$row['url']."' height=50px ></td>";
  
-   echo '<td>'."IME: ".$row['ime'].'</td>';
+   echo '<td>'.$row['ime'].'</td>';
 
    //echo '<td>'."CENA: ".$row['cena']."$".'<br>';
    
@@ -48,7 +45,7 @@ echo '<td width="50%">'." ".'</td>';
   // $rez=$rez+($cena*$kolicina);
   
    
-   echo '<td colspan="2" class="info1_td">';
+   echo '<td class="info1_td">';
   if ($row['akcijska_cena'] != null) {
        
       echo '<p>'."Redna cena:  ".'<strike class="strike">';
@@ -83,7 +80,7 @@ echo '<td width="50%">'." ".'</td>';
    
    echo '<tr>';
    echo '<td>';
-   echo '<form method="post" action="kosarica_delete.php">';
+   echo '<form method="post" action="../kosarica_delete.php">';
    echo '<input type="hidden" name="kosarica_id" value="'.$kosarica_id.'">';
    echo '<input type="hidden" name="izdelek_id" value="'.$izdelek_id.'">';
    echo '<input type="hidden" name="kolicina" value="'.$kolicina.'">';
@@ -141,7 +138,10 @@ echo '<tr>';
    
      if ($skupna_cenaa == 0)
      {
-         echo "V KOŠARICI NIMATE IZDELKOV";
+         echo '
+						<p>V KOŠARICI NIMATE IZDELKOV</p>
+					</div>
+				</div>';
      }
      else
      {

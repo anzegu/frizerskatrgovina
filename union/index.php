@@ -195,60 +195,15 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 section-heading text-center">
-						<h2 class="to-animate">Plans Built For Every One</h2>
-						<div class="row">
-							<div class="col-md-8 col-md-offset-2 subtext">
-								<h3 class="to-animate">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove. </h3>
-							</div>
-						</div>
+						<h2 class="to-animate">Košarica</h2>
 					</div>
 				</div>
 
 				<div class="row">
-					<div class="pricing">
-						<div class="col-md-3">
-							<div class="price-box to-animate-2">
-								<h2 class="pricing-plan">Starter</h2>
-								<div class="price"><sup class="currency">$</sup>9<small>/month</small></div>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-								<a href="#" class="btn btn-select-plan btn-sm">Select Plan</a>
-							</div>
-						</div>
-
-						<div class="col-md-3">
-							<div class="price-box to-animate-2">
-								<h2 class="pricing-plan">Basic</h2>
-								<div class="price"><sup class="currency">$</sup>27<small>/month</small></div>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-								<a href="#" class="btn btn-select-plan btn-sm">Select Plan</a>
-							</div>
-						</div>
-
-						<div class="col-md-3">
-							<div class="price-box to-animate-2 popular">
-								<h2 class="pricing-plan pricing-plan-offer">Pro <span>Best Offer</span></h2>
-								<div class="price"><sup class="currency">$</sup>74<small>/month</small></div>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-								<a href="#" class="btn btn-select-plan btn-sm">Select Plan</a>
-							</div>
-						</div>
-
-						<div class="col-md-3">
-							<div class="price-box to-animate-2">
-								<h2 class="pricing-plan">Unlimited</h2>
-								<div class="price"><sup class="currency">$</sup>140<small>/month</small></div>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-								<a href="#" class="btn btn-select-plan btn-sm">Select Plan</a>
-							</div>
-						</div>
-					</div>
+					<?php include_once '../kosarica.php';?>
 				</div>
 
-				<div class="row">
-					<div class="col-md-6 col-md-offset-3 to-animate">
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. <a href="#">Learn More</a></p>
-					</div>
-				</div>
+				
 
 			</div>
 		</div>
