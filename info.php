@@ -7,7 +7,7 @@ $user_id = $_SESSION['user_id'];
 $id = $_GET['id'];
 
 if( !isset($_SESSION["user_id"]) ){
-    header("Location: prikaz_izdelkov.php?opozorilo=prijavi se ");
+    header("Location: index.php?opozorilo=prijavi se ");
     exit();
 }
 
