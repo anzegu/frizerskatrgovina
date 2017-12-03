@@ -15,5 +15,5 @@ $id = $_GET['id'];
    $query2 = "DELETE FROM izdelki WHERE id = $id";
    mysqli_query($link, $query2) or die(mysqli_error($link));
    
-   header("Location: prikaz_izdelkov.php");
+   header("Location: union/index.php");
  

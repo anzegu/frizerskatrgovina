@@ -21,5 +21,5 @@ $kolicina = $_POST['kolicina'];
    mysqli_query($link, $query) or die(mysqli_error($link));
      
    
-   header("Location: union/index.php");
+   header("Location: union/index.php#fh5co-pricing");
  

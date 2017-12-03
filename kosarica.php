@@ -10,8 +10,6 @@ $user_id = $_SESSION['user_id'];
 
 echo '<table class="tabela_kosarica"  width="85%" border="2">';
 
-echo '<div class="row">
-					<div class="col-md-6 col-md-offset-3 to-animate"><table class="tabela_kosarica to-animate">';
 
 
 $query = "SELECT k.id, k.skupna_cena, k.status FROM kosarice k WHERE uporabnik_id = $user_id";
@@ -67,7 +65,7 @@ echo '<td width="50%">'." ".'</td>';
    //echo '</td>';
    
  
-   echo '<form method="post" action="kosarica_delete.php">';
+   echo '<form method="post" action="../kosarica_delete.php">';
    echo '<input type="hidden" name="kosarica_id" value="'.$kosarica_id.'">';
    echo '<input type="hidden" name="izdelek_id" value="'.$izdelek_id.'">';
    echo '<input type="hidden" name="kolicina" value="'.$kolicina.'">';
@@ -150,21 +148,19 @@ echo '<td bgcolor="#F1FAFF">'." ".'</td>';
      if ($skupna_cenaa == 0)
      {
          echo '
-						<p>V KOŠARICI NIMATE IZDELKOV</p>
-					</div>
-				</div>';
+						<p>V KOŠARICI NIMATE IZDELKOV</p>';
      }
      else
      {
    
    echo '<td colspan="2"  style="text-align:right" bgcolor="#F1FAFF">';
-   echo '<form method="post" action="racun.php">';
+   echo '<form method="post" action="index.php?sc=true">';
    //echo '<input type="hidden" name="izdelek_id" value="'.$izdelek_id.'">';
    echo '<input type="hidden" name="skupna_cenaa" value="'.$skupna_cenaa.'">';
    echo '<input type="hidden" name="kolicina" value="'.$kolicina.'">';
    echo '<div class="gumb_vec">';
    echo '<div class="gumb_vec1">';
-    echo "<a href='prikaz_izdelkov.php'>Nadaljuj nakup</a>";
+    echo "<a href='#' data-nav-section='home'>Nadaljuj nakup</a>";
     echo ' &nbsp'.' &nbsp'.' &nbsp'.' &nbsp'.' &nbsp'.' &nbsp'.' &nbsp';
    echo '<input class="btn btn-select-plan btn-sm" type="submit" name="submit" value="POVZETEK NAROČILA">';
    echo '</div>';

@@ -45,4 +45,4 @@ $query = "UPDATE kosarice SET status = '1' WHERE id = $kosarica_id";
     }
 
     
-header("Location: prikaz_izdelkov.php");
+header("Location: union/index.php");

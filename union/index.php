@@ -131,6 +131,9 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
 
 	<section id="fh5co-home" data-section="home" style="background-image: url(images/full_image_3.jpg);" data-stellar-background-ratio="0.5">
 		<div class="gradient"><?php
+                if(isset($_GET['sc'])){
+                    include_once "../racun.php";
+                }else
                 include_once "../prikaz_izdelkov.php";
                 ?></div>		
 	</section>

@@ -1,15 +1,8 @@
 <?php
-include_once 'union/oblika.php';
-?>
-
-<?php
-
 include_once 'connection.php';
 include_once 'session.php';
 
 $user_id = $_SESSION['user_id'];
-
-echo '<table>';
 
 $query = "SELECT k.id, k.skupna_cena, k.status FROM kosarice k WHERE uporabnik_id = $user_id AND status = 0";
 $result = mysqli_query($link, $query) or die(mysqli_error($link));
@@ -27,32 +20,31 @@ $query = "SELECT ik.*, i.*, i.id AS izdelek_id, s.*, ik.kolicina AS ikkol FROM i
 $result = mysqli_query($link, $query) or die(mysqli_error($link));
 $rez = 0;
 while ($row = mysqli_fetch_array($result)) {
-   
+ echo '<div class = "product_box to-animate" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">';  
     $izdelek_id = $row['izdelek_id'];
 
     
-   echo '<tr>';
-   echo '<td>'."<img src='".$row['url']."' width=250 heght=500 </td>";
-   echo '</tr>';
    
-   echo '<tr>';
-   echo '<td>'."IME: ".$row['ime'].'</td>';
-   echo '</tr>';
+   echo "<img src='../".$row['url']."' width=100 heght=100 ><br>";
    
-   echo '<tr>';
-   echo '<td>'."CENA: ".$row['cena']."$".'</td>';
-   echo '</tr>';
+   
+   
+   echo "IME: ".$row['ime'].'<br>';
+   
+   
+   
+   echo "CENA: ".$row['cena']."$".'<br>';
+   
    
    $cena = $row['cena'];
    $kolicina = $row['ikkol'];
 
-   
   // $rez=$rez+($cena*$kolicina);
   
    
-   echo '<tr>';
+   
    if ($row['akcijska_cena'] != null) {
-   echo '<td>'."AKCIJSKA CENA: ".$row['akcijska_cena']."$".'</td>';
+   echo "AKCIJSKA CENA: ".$row['akcijska_cena']."$".'<br>';
     $akcijska_cena = $row['akcijska_cena'];
    $rez=$rez+($akcijska_cena*$kolicina);
    }
@@ -60,13 +52,13 @@ while ($row = mysqli_fetch_array($result)) {
    {
        $rez=$rez+($cena*$kolicina);
    }
-   echo '</tr>';
    
    
-   echo '<tr>';
-   echo '<td>'."KOLIČINA: ".$row['ikkol'].'</td>';
-   echo '</tr>';
    
+   
+   echo "KOLIČINA: ".$row['ikkol'].'<br>';
+   
+echo '</div>';
 }
 
 
@@ -77,58 +69,48 @@ $query = "SELECT k.skupna_cena FROM kosarice k WHERE uporabnik_id = $user_id AND
     $skupna_cenaa = $row['skupna_cena'];
 
 }
-     echo '<tr>';
-   echo '<td>'."SKUPAJ: ".$skupna_cenaa."$".'</td>';
-   echo '</tr>';  
-
-   echo '<tr>';
-   echo'<td height="50px">'." ".'</td>';
-   echo '</tr>';  
-   
-   
-     echo '<tr>';
-   echo '<td>NASLOV DOSTAVE:</td>';
-   echo '</tr>';  
+   echo '<br><div style="clear:both; text-align: center">';  
+   echo "SKUPAJ: ".$skupna_cenaa."$".'<br>';
+   echo 'NASLOV DOSTAVE:<br>';
+     
    
    $id = $_SESSION['user_id'];
 $query4 = "SELECT kr.*, kr.ime AS krIme, s.* FROM kraji kr INNER JOIN saloni s ON kr.id = s.kraj_id INNER JOIN uporabniki u ON s.id = u.salon_id where u.id=$id";
     $result4 = mysqli_query($link, $query4) or die(mysqli_error($link));
 
     while ($row = mysqli_fetch_array($result4)) {
-   
         
-   echo '<tr>';
-   echo '<td>'.$row['krIme'].'</td>';
-   echo '</tr>';  
    
-   echo '<tr>';
-   echo '<td>'.$row['posta'].'</td>';
-   echo '</tr>';  
+   echo $row['krIme'].'<br>';
+     
    
-   echo '<tr>';
-   echo '<td>'.$row['ime'].'</td>';
-   echo '</tr>'; 
    
-   echo '<tr>';
-   echo '<td>'.$row['naslov'].'</td>';
-   echo '</tr>'; 
+   echo $row['posta'].'<br>';
+     
    
-   echo '<tr>';
-   echo '<td>'.$row['tel'].'</td>';
-   echo '</tr>'; 
+   
+   echo $row['ime'].'<br>';
+    
+   
+   
+   echo $row['naslov'].'<br>';
+    
+   
+   
+   echo $row['tel'].'<br>';
+    
 
 }  
    
    
    
-echo '</table>';
     
 
-     echo "<a href='kosarica.php'>NAZAJ</a></br>";
+     echo "<br><a href='kosarica.php'>NAZAJ</a><br><br>";
      
-    echo '<tr>';
-   echo '<td>';
-   echo '<form method="post" action="zakljucek.php">';
+    
+   
+   echo '<form method="post" action="../zakljucek.php">';
    //echo '<input type="hidden" name="izdelek_id" value="'.$izdelek_id.'">';
    echo '<input type="hidden" name="skupna_cenaa" value="'.$skupna_cenaa.'">';
    echo '<input type="hidden" name="kolicina" value="'.$kolicina.'">';
@@ -138,7 +120,6 @@ echo '</table>';
     echo '</div>';
    echo '</div>';
    echo '</form>';
-   echo '</td>';
-   echo '</tr>';
-   
+   echo '</div>';
+   echo '</div>';
 }
