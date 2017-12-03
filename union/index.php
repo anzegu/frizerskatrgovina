@@ -100,19 +100,20 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
                             <?php 
                             if (isset ($_SESSION['steamid']))
                             {?>    
+                            <div style="margin: -50px 0 0 0">
                                 <div class="logout">
                                     <button class="logoutbtn"><a href="logins/logout.php">Logout</a></button>
                                 </div><?php } ?>
                             
                             <?php 
-                            if (isset($_SESSION['FaceName']))
+                            if (isset($_SESSION['priimek']))
                             {?>    
                                 <div class="logout">
                                     <button class="logoutbtn"><a href="logins/logout.php">Logout</a></button>
                                 </div><?php } ?>
                             
                             <?php
-                            if (!isset($_SESSION['FaceName']) && (!isset ($_SESSION['steamid'])))
+                            if (!isset($_SESSION['FaceName']) && (!isset ($_SESSION['steamid'])) && (!isset($_SESSION['priimek'])))
                             {?>
                             <div class="login">
                                 <button class="dropbtn">Log in</button>
@@ -121,7 +122,7 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
                                     echo "<a href='".$_SESSION['loginURL']."'>Facebook</a>"; ?>
                                     <?php echo loginbutton(); ?>
                                     <a href="logins/google/google_login.php">Gmail</a>
-                                </div></div>
+                                </div></div></div>
                             <?php }?>
                             
 			</nav>
@@ -137,8 +138,12 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
 	<section style="background-color: #e9584d" id="fh5co-explore" data-section="explore">
 		<div class="container">
 			<?php
+                        if(isset($_GET['ide'])){
+                            include_once "../u_racun.php";
+                        }else                        
                         include_once "../evidenca.php";
                         ?>
+                </div>    
 	</section>
         
 	<section id="fh5co-testimony" data-section="testimony">
@@ -173,22 +178,8 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
 		</div>
 	</section>
 <?php }?>
-	<div class="getting-started getting-started-1">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 to-animate">
-					<h3>Getting Started</h3>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-				</div>
-				<div class="col-md-6 to-animate-2">
-					<div class="call-to-action text-right">
-						<a href="#" class="sign-up">Sign Up For Free</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
+            <hr>
+<?php if(isset($_SESSION['user_id']))	{ ?>
 	<section id="fh5co-pricing" data-section="pricing">
 		<div class="fh5co-pricing">
 			<div class="container">
@@ -207,7 +198,7 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
 			</div>
 		</div>
 	</section>
-<?php if(isset($_GET['id'])){ ?>
+<?php } if(isset($_GET['id'])){ ?>
 	<section id="fh5co-services" data-section="services">
 		<div class="fh5co-services">
 			<div class="container">
@@ -222,73 +213,30 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
 	</section>	
 <?php } ?>
 	<hr>
-
+<?php if(isset($_GET['idu'])){ ?>
 	<section id="fh5co-trusted" data-section="trusted">
 		<div class="fh5co-trusted">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 section-heading text-center">
-						<h2 class="to-animate">Trusted By</h2>
+						<h2 class="to-animate">Uredi izdelke</h2>
 						<div class="row">
 							<div class="col-md-8 col-md-offset-2 subtext">
-								<h3 class="to-animate">We’re trusted by these popular companies</h3>
+								<?php include_once "../uredi_izdelke.php"; ?>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					 <div class="col-md-2 col-sm-3 col-xs-6 col-sm-offset-0 col-md-offset-1">
-					 	<div class="partner-logo to-animate-2">
-					 		<img src="images/logo1.png" alt="Partners" class="img-responsive">
-					 	</div>
-					 </div>
-				    <div class="col-md-2 col-sm-3 col-xs-6">
-				    	<div class="partner-logo to-animate-2">
-				    		<img src="images/logo2.png" alt="Partners" class="img-responsive">
-						</div>
-				    </div>
-				    <div class="col-md-2 col-sm-3 col-xs-6">
-				    	<div class="partner-logo to-animate-2">
-				    		<img src="images/logo3.png" alt="Partners" class="img-responsive">
-				    	</div>
-				    </div>
-				    <div class="col-md-2 col-sm-3 col-xs-6">
-				    	<div class="partner-logo to-animate-2">
-				    		<img src="images/logo4.png" alt="Partners" class="img-responsive">
-				    	</div>
-				    </div>
-				    <div class="col-md-2 col-sm-12 col-xs-12">
-				    	<div class="partner-logo to-animate-2">
-				    		<img src="images/logo5.png" alt="Partners" class="img-responsive">
-				    	</div>
-				    </div>
-				</div>
 			</div>
 		</div>
 	</section>
-
-	<div class="getting-started getting-started-2">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 to-animate">
-					<h3>Getting Started</h3>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-				</div>
-				<div class="col-md-6 to-animate-2">
-					<div class="call-to-action text-right">
-						<a href="#" class="sign-up">Sign Up For Free</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
+<?php } ?>
 	<div id="fh5co-footer" role="contentinfo">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4 to-animate">
-					<h3 class="section-title">About Us</h3>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics.</p>
+					<h3 class="section-title">O nam</h3>
+					<p>Trgovina z aparati,barvo, itd. za frizerske salone.</p>
 					<p class="copy-right">&copy; 2015 Union Free Template. <br>All Rights Reserved. <br>
 						Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a>
 						Demo Images: <a href="http://unsplash.com/" target="_blank">Unsplash</a> &amp; Dribbble Image by <a href="https://dribbble.com/tibi_neamu" target="_blank">Tiberiu</a>
@@ -296,12 +244,12 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
 				</div>
 
 				<div class="col-md-4 to-animate">
-					<h3 class="section-title">Our Address</h3>
+					<h3 class="section-title">Naslov</h3>
 					<ul class="contact-info">
-						<li><i class="icon-map-marker"></i>198 West 21th Street, Suite 721 New York NY 10016</li>
+						<li><i class="icon-map-marker"></i>Trg mladosti 3, 3320 Velenje</li>
 						<li><i class="icon-phone"></i>+ 1235 2355 98</li>
-						<li><i class="icon-envelope"></i><a href="#">info@yoursite.com</a></li>
-						<li><i class="icon-globe2"></i><a href="#">www.yoursite.com</a></li>
+						<li><i class="icon-envelope"></i><a href="#">frizerskisalon@fr.com</a></li>
+						<li><i class="icon-globe2"></i><a href="#">ft-frizerskatrgovina.com</a></li>
 					</ul>
 					<h3 class="section-title">Connect with Us</h3>
 					<ul class="social-media">
@@ -312,10 +260,10 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
 					</ul>
 				</div>
 				<div class="col-md-4 to-animate">
-					<h3 class="section-title">Drop us a line</h3>
+					<h3 class="section-title">Pišite nam</h3>
 					<form class="contact-form">
 						<div class="form-group">
-							<label for="name" class="sr-only">Name</label>
+							<label for="name" class="sr-only">Ime</label>
 							<input type="name" class="form-control" id="name" placeholder="Name">
 						</div>
 						<div class="form-group">
@@ -323,11 +271,11 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
 							<input type="email" class="form-control" id="email" placeholder="Email">
 						</div>
 						<div class="form-group">
-							<label for="message" class="sr-only">Message</label>
+							<label for="message" class="sr-only">Sporočilo</label>
 							<textarea class="form-control" id="message" rows="7" placeholder="Message"></textarea>
 						</div>
 						<div class="form-group">
-							<input type="submit" id="btn-submit" class="btn btn-send-message btn-md" value="Send Message">
+							<input type="submit" id="btn-submit" class="btn btn-send-message btn-md" value="Pošlji">
 						</div>
 					</form>
 				</div>

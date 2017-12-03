@@ -1,9 +1,4 @@
 <?php
-//include_once 'union/oblika.php';
-?>
-
-
-<?php
 include_once 'session.php';
 include_once 'connection.php';
 
@@ -22,7 +17,7 @@ $result = mysqli_query($link, $query) or die(mysqli_error($link));
 $row = mysqli_num_rows($result);
 if($row==0){
     echo '<h1 class="to-animate" style="color: red; text-align: center;">Ni najdenih izdelkov</h1>';
-    header("Refresh: 3; url=union/index.php");
+    header("Refresh: 3; url=index.php");
 }else{
 while ($row = mysqli_fetch_array($result)) {
  
@@ -32,9 +27,9 @@ echo '<div class="to-animate">';
  echo '<div class = "product_box to-animate" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">';
    echo '<p>';
      if (isset($_SESSION['potrjen'])&&($_SESSION['potrjen']==1)){  
-   echo '<a href="izdelek_delete.php?id='.$id.'" onclick="return confirm(\'Are you sure?\')">DELETE</a>';
+   echo '<a href="index.php?idd='.$id.'" onclick="return confirm(\'Are you sure?\')">DELETE</a>';
    echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp';
-   echo '<a href="uredi_izdelke.php?id='.$id.'">UREDI</a>';
+   echo '<a href="index.php?idu='.$id.'#fh5co-trusted">UREDI</a>';
    }
      echo '</p>';
    
@@ -46,7 +41,7 @@ echo '<div class="to-animate">';
 
    if ($row['akcijska_cena'] != null) {
        
-      echo '<p>'."Redna cena:  ".'<strike class="strike">';
+      echo '<p>'."Redna cena:  ".'<strike style="color: white" class="strike">';
         echo $row['cena']."$".'</p>';
       echo '</strike>';
    echo '<p style="color: red">'."AKCIJSKA CENA: ".$row['akcijska_cena']."$".'</p>';

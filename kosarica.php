@@ -8,7 +8,7 @@ $user_id = $_SESSION['user_id'];
 
 
 
-echo '<table class="tabela_kosarica"  width="85%" >';
+echo '<table class="tabela_kosarica"  width="85%" border="2">';
 
 echo '<div class="row">
 					<div class="col-md-6 col-md-offset-3 to-animate"><table class="tabela_kosarica to-animate">';
@@ -36,13 +36,13 @@ while ($row = mysqli_fetch_array($result)) {
     
    echo '<tr>';
 
-   echo '<td width="300px">'."<img src='".$row['url']."' width=100px heght=100px </td>";
+   echo '<td width="300px">'."<img src='../".$row['url']."' width=100px heght=100px </td>";
  
-   echo '<td>'.'<p style="color: red">'.$row['ime'].'</p>'.'</td>';
 
-   echo '<td>'."<img src='../".$row['url']."' height=50px ></td>";
+   //echo '<td>'."<img src='../".$row['url']."' height=50px ></td>";
+    echo '<td>'.'<p style="color: red">'.$row['ime'].'</p>'.'</td>';
  
-   echo '<td>'.$row['ime'].'</td>';
+  
 
 
    //echo '<td>'."CENA: ".$row['cena']."$".'<br>';
@@ -94,19 +94,7 @@ echo '<td width="50%">'." ".'</td>';
    
    
 
-   
-   echo '<tr>';
-   echo '<td>';
-   echo '<form method="post" action="../kosarica_delete.php">';
-   echo '<input type="hidden" name="kosarica_id" value="'.$kosarica_id.'">';
-   echo '<input type="hidden" name="izdelek_id" value="'.$izdelek_id.'">';
-   echo '<input type="hidden" name="kolicina" value="'.$kolicina.'">';
-   echo '<input type="submit" name="submit" value="ODSTRANI">';
-   echo '</form>';
-   echo '</td>';
-   echo '</tr>';
-   
-   
+
   
 
    /*

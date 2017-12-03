@@ -7,7 +7,7 @@ $user_id = $_SESSION['user_id'];
 $id = $_GET['id'];
 
 if( !isset($_SESSION["user_id"]) ){
-    header("Location: prikaz_izdelkov.php?opozorilo=prijavi se ");
+    header("Location: index.php?opozorilo=prijavi se ");
     exit();
 }
 
@@ -90,7 +90,7 @@ while ($row = mysqli_fetch_array($result)) {
             if (isset($_SESSION['potrjen'])&&($_SESSION['potrjen']==1) || ($_SESSION['potrjen']==2))  
                   {
                 echo '<tr>';
-                echo '<form method="post" action="kosarica_insert.php">';
+                echo '<form method="post" action="../kosarica_insert.php">';
                 echo '<input type="hidden" name="id" value="'.$id.'">';
                  echo '<input type="hidden" name="kolicina_izdelkov" value="'.$kolicina_izdelkov.'">';
                  echo '<td>'.'<input type="number" name = "kolicina" required="required">';
