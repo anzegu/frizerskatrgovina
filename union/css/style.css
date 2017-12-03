@@ -1331,11 +1331,11 @@ input[type=textarea] {
 
 
 .potrditev{
-        position: relative;
-    left: 50px; 
-     width:700px;
-    margin-right:10px;
-    float:left;
+
+    
+      margin-left:auto; 
+    margin-right:auto;
+    background-color: white;
 }
 
 .komentarji_crtica{
