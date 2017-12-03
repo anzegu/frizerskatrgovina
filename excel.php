@@ -32,8 +32,8 @@ $id = $_SESSION['user_id'];
         $filename= "kosarica".$_SESSION['rid'].".xls";
         $_SESSION['filename'] = $filename;
         header("Content-Type: application/xls");
-        header("Content-Disposition: attachment; filename=".$_SERVER["DOCUMENT_ROOT"] . "/union/PHPMailer/mail_excel/".$filename); 
+        header("Content-Disposition: attachment; filename=".$filename); 
         echo $output;
     }
-    header("Refresh: 3; url=prikaz_izdelkov.php");
+    header("Refresh: 3; url=union/index.php");
     ob_flush();

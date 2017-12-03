@@ -7,7 +7,7 @@
                       'app_secret' => '0693cc16699f75bc8eee1d4047eda1d0',
                       'default_graph_version' => 'v2.10',
                     ]);
-	$redirect = 'http://localhost/frizerskatrgovina/prikaz_izdelkov.php';
+	$redirect = 'http://tr-frizerstvo.eu/union/index.php';
 
 
 	# Create the login helper object
@@ -81,7 +81,7 @@
                        "VALUES ('".$_SESSION['FaceName']."', '".$_SESSION['FaceEmail']."');";   
                 $result = mysqli_query($link, $sql);
                 }
-		header("Location: prikaz_izdelkov.php");
+		header("Location: index.php");
 	}else{
 		$permissions  = ['email'];
 		$loginUrl = $helper->getLoginUrl($redirect,$permissions);

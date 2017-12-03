@@ -275,26 +275,7 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
 						<li><a href="#" class="github"><i class="icon-github-alt"></i></a></li>
 					</ul>
 				</div>
-				<div class="col-md-4 to-animate">
-					<h3 class="section-title">Pišite nam</h3>
-					<form class="contact-form">
-						<div class="form-group">
-							<label for="name" class="sr-only">Ime</label>
-							<input type="name" class="form-control" id="name" placeholder="Name">
-						</div>
-						<div class="form-group">
-							<label for="email" class="sr-only">Email</label>
-							<input type="email" class="form-control" id="email" placeholder="Email">
-						</div>
-						<div class="form-group">
-							<label for="message" class="sr-only">Sporočilo</label>
-							<textarea class="form-control" id="message" rows="7" placeholder="Message"></textarea>
-						</div>
-						<div class="form-group">
-							<input type="submit" id="btn-submit" class="btn btn-send-message btn-md" value="Pošlji">
-						</div>
-					</form>
-				</div>
+				
 			</div>
 		</div>
 	</div>
@@ -313,9 +294,6 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
 	<script src="js/jquery.stellar.min.js"></script>
 	<!-- Owl Carousel -->
 	<script src="js/owl.carousel.min.js"></script>
-	<!-- Google Map -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
-	<script src="js/google_map.js"></script>
 	<!-- Main JS (Do not remove) -->
 	<script src="js/main.js"></script>
 

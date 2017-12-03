@@ -8,7 +8,7 @@ $user_id = $_SESSION['user_id'];
 
 
 
-echo '<table class="tabela_kosarica"  width="85%" border="2">';
+echo '<table class="tabela_kosarica"  width="85%" border="0">';
 
 
 
@@ -30,6 +30,9 @@ $rez = 0;
 while ($row = mysqli_fetch_array($result)) {
 
     $izdelek_id = $row['izdelek_id'];
+    
+    //Ozbej koda----------------------
+    echo '<tr><th>Slika izdelka</th><th>Ime izdelka</th><th></th><th>Cena izdelka</th></tr>';
 
     
    echo '<tr>';

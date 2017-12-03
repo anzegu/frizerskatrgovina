@@ -15,15 +15,16 @@ try {
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'mail.smtp2go.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'frizer';                 // SMTP username
-    $mail->Password = 'c3VibDN4bWdiY20w';                           // SMTP password
+    $mail->Username = 'frizerska_trgovina';                 // SMTP username
+    $mail->Password = 'aGt5cG0zNmRtMHUw';                           // SMTP password
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 2525;                                     // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('ozbej.golob@gmail.com', 'Frizerska trgovina');
+    $mail->setFrom('test@gmail.com', 'Frizerska trgovina');
     
-    $mail->addAddress($_SESSION['gmail']);     // Add a recipient
+    //$mail->addAddress($_SESSION['gmail']);     // Add a recipient
+    $mail->addAddress('test@gmail.com');
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML

@@ -35,7 +35,7 @@ if($row!=0){
         echo '<img src="../'.$slika = $rows2['url'].'" height="50px"><br>';
         }
         echo '<br><b>'.$skupna_cena = $rows['skupna_cena'].'€</b><br>';
-        ?>  <form method="post" action="union/PHPMailer/mail_posta/index.php">
+        ?>  <form method="post" action="PHPMailer/mail_posta/index.php">
     <input type="submit" name="export_excel" class="btn btn-success" value="Pošlji mail">
 </form>
 
