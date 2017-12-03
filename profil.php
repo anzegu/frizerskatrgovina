@@ -1,7 +1,6 @@
 <?php
     include_once 'connection.php';
     include_once 'session.php';
-    include_once 'union/oblika.php';
     
     $user = $_SESSION['user_id'];
     
@@ -18,7 +17,7 @@ if ($salon_id==NULL){
 
 
 
-<div class="ok">
+<div class="ok to-animate">
     <h1 style="color: red">NAPIŠI KATEREMU SALONU PRIPADAŠ</h1>
 <form action="salon_insert.php" method="post">
     <p>Ime Kraja: <br>
@@ -50,50 +49,20 @@ if ($salon_id==NULL){
 }
 
  else {
-     echo '<table class="tabela_info">';
-    $query4 = "SELECT kr.*, kr.ime AS krIme, s.* FROM kraji kr INNER JOIN saloni s ON kr.id = s.kraj_id INNER JOIN uporabniki u ON s.id = u.salon_id WHERE u.id = $user ";
-    $result4 = mysqli_query($link, $query4) or die(mysqli_error($link));
+     echo '<table class="tabela_info to-animate">';
+    $query = "select *, u.ime as ime, s.ime as sime, u.tel as utel from uporabniki u inner join saloni s on s.id=u.salon_id where u.id=$user";
+$result = mysqli_query($link, $query);
+echo '<div style="text-align: center">';
+while($rows = mysqli_fetch_assoc($result)){
+    echo $ime = $rows['ime'].'<br>';
+    echo $email = $rows['e_mail'].'<br>';
+    echo $tel = $rows['utel'].'<br><br>';
+    echo $sime = $rows['sime'].'<br>';
+    echo $naslov = $rows['naslov'].'<br>';
+    echo $utel = $rows['tel'].'<br><br><br>';
+}
+echo '</div>'; 
 
-    while ($row = mysqli_fetch_array($result4)) {
-   
-        
-   echo '<tr>';
-   
-   echo '<td>'."Ime Kraja: ".$row['krIme'].'</td>';
-   echo '</tr>';  
-   
-   echo '<tr>';
-   echo '<td>'."Poštna Številka: ".$row['posta'].'</td>';
-   echo '</tr>';  
-   
-   echo '<tr>';
-   echo '<td>'."Ime Salona: ".$row['ime'].'</td>';
-   echo '</tr>'; 
-   
-   echo '<tr>';
-   echo '<td>'."Naslov: ".$row['naslov'].'</td>';
-   echo '</tr>'; 
-   
-   echo '<tr>';
-   echo '<td>'."Telefon: ".$row['tel'].'</td>';
-   echo '</tr>'; 
-   
-   echo '<tr height="50px">';
-   echo '<td>'."".'</td>';
-   echo '</tr>'; 
-   
-   echo '<tr>';
-   echo '<td>'; 
-   echo '<div class="gumb_vec">';
-   echo '<div class="gumb_vec1">';
-   echo'<a href="uredi_profil.php?id='.$user.'" class="btn btn-select-plan btn-sm">UREDI</a>';
-   echo '</div>';
-   echo '</div>';
-   echo '</td>'; 
-   echo '</tr>'; 
-
-}  
-
-echo '<table>';
+echo '</table>';
 }
 ?>

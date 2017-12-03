@@ -16,6 +16,6 @@
     mysqli_query($link, $query);
     $result = mysqli_query($link, $query) or die(mysqli_error($link));
     
-    header("Location: profil.php?id=$id");
+    header("Location: union/index.php");
     
     ?>

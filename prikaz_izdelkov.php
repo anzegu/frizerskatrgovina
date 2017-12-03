@@ -8,7 +8,7 @@ include_once 'session.php';
 include_once 'connection.php';
 
 
-echo '<br><br><br><br><div style=";margin: -60px 25% 0 25%; text-align: center"><form method="post" action="prikaz_izdelkov.php"><input placeholder="Išči izdelek ..." type="text" name="search" style="height: 35px; width: 200px; padding: 5px; border: 3px solid grey; border-radius: 25px" required/></form></div>';
+echo '<br><br><br><br><div class="to-animate" style=";margin: -60px 25% 0 25%; text-align: center"><form method="post" action="index.php"><input placeholder="Išči izdelek ..." type="text" name="search" style="height: 35px; width: 200px; padding: 5px; border: 3px solid grey; border-radius: 25px" required/></form></div>';
 echo '<div style="margin: 0 6% 6% 6%">';
 if(isset($_POST['search'])){
     $ime = $_POST['search'];
@@ -21,15 +21,15 @@ $query = "SELECT i.id, i.ime, i.cena, i.akcijska_cena, s.url FROM izdelki i INNE
 $result = mysqli_query($link, $query) or die(mysqli_error($link));
 $row = mysqli_num_rows($result);
 if($row==0){
-    echo '<h1 style="color: red; text-align: center;">Ni najdenih izdelkov</h1>';
+    echo '<h1 class="to-animate" style="color: red; text-align: center;">Ni najdenih izdelkov</h1>';
     header("Refresh: 3; url=prikaz_izdelkov.php");
 }else{
 while ($row = mysqli_fetch_array($result)) {
  
    $id = $row['id'];
    
-echo '<div>';
- echo '<div class = "product_box">';
+echo '<div class="to-animate">';
+ echo '<div class = "product_box to-animate" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">';
    echo '<p>';
      if (isset($_SESSION['potrjen'])&&($_SESSION['potrjen']==1)){  
    echo '<a href="izdelek_delete.php?id='.$id.'" onclick="return confirm(\'Are you sure?\')">DELETE</a>';

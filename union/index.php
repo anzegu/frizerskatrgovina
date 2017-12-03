@@ -88,15 +88,15 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
 						<li class="active"><a href="#" data-nav-section="home"><span>Home</span></a></li>
-						<li><a href="#" data-nav-section="explore"><span>Explore</span></a></li>
-						<li><a href="#" data-nav-section="testimony"><span>Testimony</span></a></li>
+						<?php  if(isset($_SESSION['potrjen'])&&$_SESSION['potrjen']==1){ ?>
+                                                <li><a href="#" data-nav-section="explore"><span>Evidenca</span></a></li>
+						<li><a href="#" data-nav-section="testimony"><span>Profil</span></a></li>
 						<li><a href="#" data-nav-section="pricing"><span>Pricing</span></a></li>
+                                                <?php } ?>        
 						<li><a href="#" data-nav-section="services"><span>Services</span></a></li>
 						<li><a href="#" data-nav-section="team"><span>Team</span></a></li>
 						<li><a href="#" data-nav-section="faq"><span>FAQ</span></a></li>                                               
 					</ul>     
-						<li><a href="#" data-nav-section="faq"><span>FAQ</span></a></li>                                                   
-					</ul>
 				</div>
                             <?php 
                             if (isset ($_SESSION['steamid']))
@@ -134,71 +134,14 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
                 include_once "../prikaz_izdelkov.php";
                 ?></div>		
 	</section>
-
-	<section id="fh5co-explore" data-section="explore">
+<?php  if(isset($_SESSION['potrjen'])&&$_SESSION['potrjen']==1){ ?>
+	<section style="background-color: #e9584d" id="fh5co-explore" data-section="explore">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-12 section-heading text-center">
-					<h2 class="to-animate">Explore Our Products</h2>
-					<div class="row">
-						<div class="col-md-8 col-md-offset-2 subtext to-animate">
-							<h3>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</h3>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<div class="fh5co-explore">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-push-5 to-animate-2">
-						<img class="img-responsive" src="images/work_1.png" alt="work">
-					</div>
-					<div class="col-md-4 col-md-pull-8 to-animate-2">
-						<div class="mt">
-							<h3>Real Project For Real Solutions</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. </p>
-							<ul class="list-nav">
-								<li><i class="icon-check2"></i>Far far away, behind the word</li>
-								<li><i class="icon-check2"></i>There live the blind texts</li>
-								<li><i class="icon-check2"></i>Separated they live in bookmarksgrove</li>
-								<li><i class="icon-check2"></i>Semantics a large language ocean</li>
-								<li><i class="icon-check2"></i>A small river named Duden</li>
-							</ul>
-						</div>
-					</div>
-					
-				</div>
-			</div>
-		</div>
-
-		<div class="fh5co-explore fh5co-explore-bg-color">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-pull-1 to-animate-3">
-						<img class="img-responsive" src="images/work_1.png" alt="work">
-					</div>
-					<div class="col-md-4 to-animate-3">
-						<div class="mt">
-							<div>
-								<h4><i class="icon-people"></i>Real Project For Real Solutions</h4>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-							</div>
-							<div>
-								<h4><i class="icon-video2"></i>Real Project For Real Solutions</h4>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-							</div>
-							<div>
-								<h4><i class="icon-shield"></i>Real Project For Real Solutions</h4>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+			<?php
+                        include_once "../evidenca.php";
+                        ?>
 	</section>
+        
 	<section id="fh5co-testimony" data-section="testimony">
 		<div class="container">
 			<div class="row">
@@ -208,43 +151,29 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
 							<div class="item">
 								<div class="testimony-slide active text-center">
 									<figure>
-										<img src="images/person2.jpg" alt="user">
+										<img src="images/icon.png" alt="user">
 									</figure>
 									<blockquote>
-										<p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean."</p>
+										<p><?php include_once "../profil.php";?></p>
 									</blockquote>
-									<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
+									
 								</div>
 							</div>
 							<div class="item">
-								<div class="testimony-slide active text-center">
-									<figure>
-										<img src="images/person3.jpg" alt="user">
-									</figure>
+								<div class="testimony-slide active text-center">									
 									<blockquote>
-										<p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean."</p>
+										<div style="height: 400px"><?php include_once "../uredi_profil.php";?></div>
 									</blockquote>
-									<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
+									
 								</div>
-							</div>
-							<div class="item">
-								<div class="testimony-slide active text-center">
-									<figure>
-										<img src="images/person2.jpg" alt="user">
-									</figure>
-									<blockquote>
-										<p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean."</p>
-									</blockquote>
-									<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
-								</div>
-							</div>
+							</div>							
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-
+<?php }?>
 	<div class="getting-started getting-started-1">
 		<div class="container">
 			<div class="row">
