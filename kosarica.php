@@ -164,7 +164,7 @@ echo '<td bgcolor="#F1FAFF">'." ".'</td>';
    echo '<input type="hidden" name="kolicina" value="'.$kolicina.'">';
    echo '<div class="gumb_vec">';
    echo '<div class="gumb_vec1">';
-    echo "<a href='prikaz_izdelkov.php'>Nadaljuj nakup</a>";
+    echo "<a href='#' data-nav-section='home'>Nadaljuj nakup</a>";
     echo ' &nbsp'.' &nbsp'.' &nbsp'.' &nbsp'.' &nbsp'.' &nbsp'.' &nbsp';
    echo '<input class="btn btn-select-plan btn-sm" type="submit" name="submit" value="POVZETEK NAROČILA">';
    echo '</div>';
