@@ -3,6 +3,7 @@
 // These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+session_start();
 
 //Load composer's autoloader
 require 'vendor/autoload.php';
@@ -25,7 +26,7 @@ try {
     $mail->addAddress('ozbej.golob@gmail.com');     // Add a recipient
 
     //Attachments
-    $mail->addAttachment('kosarica.xls');         // Add attachments
+    $mail->addAttachment("C:\Users\Ožbej\Downloads".$_SESSION['filename']);         // Add attachments
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
