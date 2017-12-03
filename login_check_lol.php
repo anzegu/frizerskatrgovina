@@ -28,5 +28,6 @@
         //na login
         
         echo "napačni podatki";
+        header("Location: login_test_lol.php");
     }
 ?>
