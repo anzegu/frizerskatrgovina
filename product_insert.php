@@ -29,9 +29,9 @@ if (mysqli_query($link, $query1)) {
         echo "New record created successfully";
     } else {
         echo "Error: " . $query1 . "<br>" . mysqli_error($link);
-        header( "Refresh:3; url=product_add.php");
+        header( "Refresh:3; url=union/index.php");
 }
-header('Location: product_add.php');
+header('Location: union/index.php');
     }
     
     
@@ -80,7 +80,7 @@ if ($uploadOk == 0) {
     } else {
         echo "Error: " . $query4 . "<br>" . mysqli_error($link);
     }
-        header('Location: product_add.php');
+        header('Location: union/index.php');
     } 
     
     else {

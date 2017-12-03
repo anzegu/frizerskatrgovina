@@ -1,5 +1,5 @@
 <?php
-include_once 'union/oblika.php';
+
          include_once 'connection.php';
          
          
@@ -7,9 +7,8 @@ include_once 'union/oblika.php';
                                              {
 ?>
 
-<div class="ok">
-    <h1 style="color: red">DODAJ IZDELKE</h1>
-<form action="product_insert.php" method="post" enctype="multipart/form-data">
+<div class="ok to-animate">
+<form action="../product_insert.php" method="post" enctype="multipart/form-data">
     <p>Ime Izdelka: <br>
     <input  type="text" name="ime" placeholder="vnesite ime ..." required="required" />
   </p>
@@ -27,22 +26,22 @@ include_once 'union/oblika.php';
     
     <p> Izberite kategorije izdelka (več možnosti) <br>
     <?php
-    
+    echo '<p><a class="btn btn-select-plan btn-sm" style="color: white; background-color: #1fb5f6" href="index.php?dk=true#fh5co-trusted">Dodaj kategorijo</a></p>';
     $query = "SELECT * FROM kategorije ";
     $result = mysqli_query($link, $query);
     $row=  mysqli_num_rows($result);
    while ($row = mysqli_fetch_array($result)) {
 
        echo "<input type='checkbox' required='required' name='kategorije[]' value='".$row['id']."'>"
-        .$row['ime']."</br>"."</br>";
+        .$row['ime']." &nbsp";
        
    }
-        echo '<a href="d_kategorije.php">Dodaj kategorijo</a>';
+        
     ?>
     </p>
 </div>
-
-<div class="ok">
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="ok to-animate">
 
     <p>Izberi Sliko: <br>
       <input type="file" name="fileToUpload" id="fileToUpload"> <br />

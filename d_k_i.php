@@ -18,10 +18,10 @@ if($row!=0){
     $query ="insert into kategorije (ime, opis) values('$ime', '$opis')";
     if (mysqli_query($link, $query)) {
         echo "New category added successfully";
-        header( "Refresh:3; url=product_add.php");
+        header( "Refresh:3; url=union/index.php?dk=true#fh5co-trusted");
     } else {
         echo "Error: " . $query . "<br>" . mysqli_error($link);
-        header( "Refresh:3; url=product_add.php");
+        header( "Refresh:3; url=union/index.php?dk=true#fh5co-trusted");
     }
 }
 

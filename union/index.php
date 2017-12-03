@@ -218,16 +218,27 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
 	</section>	
 <?php } ?>
 	<hr>
-<?php if(isset($_GET['idu'])){ ?>
+<?php if(isset($_GET['idu'])||isset($_GET['di'])||isset($_GET['dk'])){ ?>
 	<section id="fh5co-trusted" data-section="trusted">
 		<div class="fh5co-trusted">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 section-heading text-center">
-						<h2 class="to-animate">Uredi izdelke</h2>
+                                                <h2 class="to-animate"><?php if(isset($_GET['di'])) {echo 'Dodaj izdelek'; }
+                                                else if(isset($_GET['dk'])){
+                                                    echo 'Dodaj kategorijo';
+                                                    }else
+                                                        echo 'Uredi izdelke';
+                                                     ?></h2>
 						<div class="row">
 							<div class="col-md-8 col-md-offset-2 subtext">
-								<?php include_once "../uredi_izdelke.php"; ?>
+								<?php if(isset($_GET['di'])) {
+                                                                    include_once "../product_add.php";
+                                                                }else if(isset($_GET['idu'])){
+                                                                    include_once "../uredi_izdelke.php";}
+                                                                    else{
+                                                                    include_once "../d_kategorije.php";                                                                        
+                                                                    }?>
 							</div>
 						</div>
 					</div>

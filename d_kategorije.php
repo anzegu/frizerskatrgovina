@@ -1,9 +1,7 @@
 <?php
-include_once 'union/oblika.php';
 include_once 'connection.php';
 ?>
-    <h1>DODAJ KATEGORIJE</h1>
-<form action="d_k_i.php" method="post" enctype="multipart/form-data">
+<form action="../d_k_i.php" method="post" enctype="multipart/form-data">
     <p>Ime Kategorije:</p>
      <input  type="text" name="ime" placeholder="vnesite ime ..." required="required" /><br />
      <p>Opis:</p>
@@ -12,4 +10,4 @@ include_once 'connection.php';
     <input type="reset" value="Prekliči" />
 </form>
     
-    <p><a href="prikaz_izdelkov.php">Prikaz izdelkov</a></p>
+    <p><a href="index.php">Prikaz izdelkov</a></p>
