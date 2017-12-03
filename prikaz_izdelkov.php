@@ -64,9 +64,9 @@ echo '<div class="to-animate">';
                  <form action="akcijska_cena.php" method="post">
        <input type="hidden" name="id" value=<?php echo $id; ?> />
        <input   type="number" name="popust" min="1" max="99" placeholder="Vnesite popust v %"/><br />
-       <input type="submit" value="Posodobi" name="submit" />
-       <input type="reset" value="Prekliči" />
-       <input type="submit" value="Izbriši Akcijsko Ceno" name="delete" />
+       <input style="color: grey" type="submit" value="Posodobi" name="submit" />
+       <input style="color: grey" type="reset" value="Prekliči" />
+       <input  style="color: grey" type="submit" value="Izbriši Akcijsko Ceno" name="delete" />
             </form>
             </p>
             
