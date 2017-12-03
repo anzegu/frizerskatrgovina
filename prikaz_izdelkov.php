@@ -17,7 +17,7 @@ $result = mysqli_query($link, $query) or die(mysqli_error($link));
 $row = mysqli_num_rows($result);
 if($row==0){
     echo '<h1 class="to-animate" style="color: red; text-align: center;">Ni najdenih izdelkov</h1>';
-    header("Refresh: 3; url=union/index.php");
+    header("Refresh: 3; url=index.php");
 }else{
 while ($row = mysqli_fetch_array($result)) {
  
