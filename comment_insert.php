@@ -15,5 +15,5 @@
     mysqli_query($link, $query);
     
     
- header("Location: info.php?id=$izdelek_id");
+ header("Location: union/index.php?id=$izdelek_id#fh5co-services");
 ?>

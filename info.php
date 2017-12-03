@@ -160,7 +160,7 @@ while ($row = mysqli_fetch_array($result)) {
     <tr> 
         <td>     
         <h3>Komentiraj</h3>
-    <form action="comment_insert.php" method="post">
+    <form action="../comment_insert.php" method="post">
         <input type="hidden" name="izdelek_id" value="<?php echo $izdelek_id; ?>" />
         <textarea class="textarea_info" wrap="hard" name="content" cols="50" rows="5"></textarea>
         <br>

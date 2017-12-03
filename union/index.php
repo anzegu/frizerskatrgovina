@@ -143,7 +143,9 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
 			<?php
                         if(isset($_GET['ide'])){
                             include_once "../u_racun.php";
-                        }else                        
+                        }else if(isset($_GET['po'])){
+                            include_once "../potrdi.php";
+                        }else                       
                         include_once "../evidenca.php";
                         ?>
                 </div>    

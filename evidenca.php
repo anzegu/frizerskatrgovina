@@ -2,7 +2,8 @@
 include_once 'connection.php';
 include_once 'session.php';
 
-echo '<div class="to-animate" style=";margin: -60px 25% 0 25%; text-align: center"><form method="post" action="index.php"><input placeholder="Išči uporabnika ..." type="text" name="search2" style="height: 35px; width: 200px; padding: 5px; border: 3px solid grey; border-radius: 25px" required/></form></div>';
+echo '<div class="to-animate" style=";margin: -60px 25% 0 25%; text-align: center"><a class="btn btn-select-plan btn-sm" style="color: white; background-color: #1fb5f6" href="index.php?po=true#fh5co-explore">POTRDI UPORABNIKA</a><br><br>'
+. '<form method="post" action="index.php"><input placeholder="Išči uporabnika ..." type="text" name="search2" style="height: 35px; width: 200px; padding: 5px; border: 3px solid grey; border-radius: 25px" required/></form></div>';
 echo '<div class="to-animate" style="margin: 0 25% 0 25%; text-align: center;">';
 if(isset($_POST['search2'])){
     $imee = $_POST['search2'];
