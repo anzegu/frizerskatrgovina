@@ -36,7 +36,7 @@ while ($row = mysqli_fetch_array($result)) {
     
    echo '<tr>';
 
-   echo '<td width="300px">'."<img src='".$row['url']."' width=100px heght=100px </td>";
+   echo '<td width="300px">'."<img src='../".$row['url']."' width=100px heght=100px </td>";
  
 
    //echo '<td>'."<img src='../".$row['url']."' height=50px ></td>";
