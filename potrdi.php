@@ -35,7 +35,7 @@ while ($row = mysqli_fetch_array($result)) {
     echo '<td>'.$row['priimek'].'</td>';
     echo '<td>'.$row['e_mail'].'</td>';
     echo '<td>'.$row['tel'].'</td>';
-    echo  "<td><a href='uporabniki_potrditev.php?id=" . $id . "'>Potrdi</a></td>";
+    echo  "<td><a href='../uporabniki_potrditev.php?id=" . $id . "'>Potrdi</a></td>";
     echo '<tr>';
 }
         ?>
