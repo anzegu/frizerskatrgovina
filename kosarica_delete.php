@@ -21,5 +21,5 @@ $kolicina = $_POST['kolicina'];
    mysqli_query($link, $query) or die(mysqli_error($link));
      
    
-   header("Location: kosarica.php");
+   header("Location: union/index.php");
  

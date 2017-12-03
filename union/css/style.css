@@ -1249,7 +1249,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .info1_td{
-   text-align: left;
+   text-align: right;
 }
 
 .tabela_info{
@@ -1286,10 +1286,37 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .tabela_kosarica{
-    position: relative;
-    left: 130px; 
     
+    
+     margin-left:auto; 
+    margin-right:auto;
+    background-color: #e8eff4;
 }
+
+
+.tabela_kosarica2{
+    
+    
+   
+    background-color: #e8eff4;
+}
+
+
+
+#td_skupna_cena{
+   
+        
+        text-align: right;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+#td_border{
+    border-bottom: 1px solid black;
+    height: 20px;
+}
+
+
 
 .potrditev{
         position: relative;

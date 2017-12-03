@@ -22,7 +22,7 @@ $result = mysqli_query($link, $query) or die(mysqli_error($link));
 $row = mysqli_num_rows($result);
 if($row==0){
     echo '<h1 class="to-animate" style="color: red; text-align: center;">Ni najdenih izdelkov</h1>';
-    header("Refresh: 3; url=prikaz_izdelkov.php");
+    header("Refresh: 3; url=union/index.php");
 }else{
 while ($row = mysqli_fetch_array($result)) {
  
@@ -40,7 +40,7 @@ echo '<div class="to-animate">';
    
    //echo '<td>'."<img src='".$row['url']."' width=250 heght=500 </td>";
     $url = $row['url'];
-   echo '<p><a href="info.php?id="'.$id.'"><img src="../'.$url.'" width=250 height=250/></a></p>';
+   echo '<p><a href="index.php?id='.$id.'#fh5co-services"><img src="../'.$url.'" width="250" height="250"/></a></p>';
 
    echo '<p>'.$row['ime'].'</td>';
 
@@ -59,7 +59,7 @@ echo '<div class="to-animate">';
    
    echo '<div class="gumb_vec">';
    echo '<div class="gumb_vec1">';
-    echo'<a href="info.php?id='.$id.'" class="btn btn-select-plan btn-sm">VEČ</a>';
+    echo'<a href="index.php?id='.$id.'#fh5co-services" class="btn btn-select-plan btn-sm">VEČ</a>';
    echo '</div>';
    echo '</div>';
    
