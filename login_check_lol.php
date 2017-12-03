@@ -20,7 +20,7 @@
         $_SESSION['priimek'] = $user['priimek'];
         $_SESSION['potrjen'] = $user['potrjen'];
 
-        header("Location: prikaz_izdelkov.php");
+        header("Location: union/index.php");
     }
     else {
       
@@ -28,5 +28,6 @@
         //na login
         
         echo "napačni podatki";
+        header("Location: login_test_lol.php");
     }
 ?>
