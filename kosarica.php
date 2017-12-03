@@ -8,7 +8,12 @@ $user_id = $_SESSION['user_id'];
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 echo '<table class="tabela_kosarica"  width="85%" >';
+=======
+echo '<div class="row">
+					<div class="col-md-6 col-md-offset-3 to-animate"><table class="tabela_kosarica to-animate">';
+>>>>>>> 32d779e11072d265eca51f323892e1bc6d9319aa
 =======
 echo '<div class="row">
 					<div class="col-md-6 col-md-offset-3 to-animate"><table class="tabela_kosarica to-animate">';
@@ -36,9 +41,15 @@ while ($row = mysqli_fetch_array($result)) {
     
    echo '<tr>';
 <<<<<<< HEAD
+<<<<<<< HEAD
    echo '<td width="300px">'."<img src='".$row['url']."' width=100px heght=100px </td>";
  
    echo '<td>'.'<p style="color: red">'.$row['ime'].'</p>'.'</td>';
+=======
+   echo '<td>'."<img src='../".$row['url']."' height=50px ></td>";
+ 
+   echo '<td>'.$row['ime'].'</td>';
+>>>>>>> 32d779e11072d265eca51f323892e1bc6d9319aa
 =======
    echo '<td>'."<img src='../".$row['url']."' height=50px ></td>";
  
