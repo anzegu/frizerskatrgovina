@@ -138,6 +138,9 @@ require 'logins/steam/SteamAuthentication/steamauth/steamauth.php';
 	<section style="background-color: #e9584d" id="fh5co-explore" data-section="explore">
 		<div class="container">
 			<?php
+                        if(isset($_GET['ide'])){
+                            include_once "../u_racun.php";
+                        }else                        
                         include_once "../evidenca.php";
                         ?>
                 </div>    

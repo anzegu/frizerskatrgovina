@@ -11,7 +11,8 @@ if(isset($_POST['search2'])){
     if($row!=0){
         while($rows = mysqli_fetch_assoc($result)){
             $id=$rows['id'];
-            echo "<a style='color: black' class='to-animate' href='u_racun.php?id=$id'>".$imee = $rows['ime']."</a><br>";              
+            echo "<a style='color: black' class='to-animate' href='index.php?ide=$id#fh5co-explore'>".$imee = $rows['ime']."</a><br>";    
+            echo '<a class="btn btn-select-plan btn-sm" style="color: white; background-color: #1fb5f6" href="../u_racun_delete.php?idizbris='.$id.'">IZBRIS</a>';
         } 
     }else{ 
             echo '<h1 class="to-animate" style="text-align: center;">Ni najdenih uporabnikov</h1>';
@@ -23,7 +24,8 @@ $row = mysqli_num_rows($result);
     if($row!=0){
         while($rows = mysqli_fetch_assoc($result)){
             $id=$rows['id'];
-            echo "<a style='color: black' class='to-animate' href='u_racun.php?id=$id'>".$imee = $rows['ime']."</a><br>";              
+            echo "<a style='color: black' class='to-animate' href='index.php?ide=$id#fh5co-explore'>".$imee = $rows['ime']."</a><br>"; 
+            echo '<a class="btn btn-select-plan btn-sm" style="color: white; background-color: #1fb5f6" href="../u_racun_delete.php?idizbris='.$id.'">IZBRIS</a><br>';
         } 
     }
 echo '</div>';
