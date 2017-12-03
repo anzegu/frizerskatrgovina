@@ -61,7 +61,7 @@ echo '<div class="to-animate">';
    ?>
         <?php if (isset($_SESSION['potrjen'])&&($_SESSION['potrjen']==1)){ ?>
             <p>
-                 <form action="akcijska_cena.php" method="post">
+                 <form action="../akcijska_cena.php" method="post">
        <input type="hidden" name="id" value=<?php echo $id; ?> />
        <input   type="number" name="popust" min="1" max="99" placeholder="Vnesite popust v %"/><br />
        <input style="color: grey" type="submit" value="Posodobi" name="submit" />

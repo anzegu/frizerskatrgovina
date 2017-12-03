@@ -18,14 +18,14 @@ while ($row = mysqli_fetch_array($result1)) {
 $query = "UPDATE izdelki SET akcijska_cena = $akcijska_cena WHERE id=$id";
    (mysqli_query($link, $query));
    
-   header('Location: prikaz_izdelkov.php');
+   header('Location: union/index.php');
    
 }
 else if (isset($_POST["delete"])){
 
      $query3 = "UPDATE izdelki SET akcijska_cena = NULL WHERE id=$id";
     mysqli_query($link, $query3) or die(mysqli_error($link));
-    header('Location: prikaz_izdelkov.php');
+    header('Location: union/index.php');
     
 }
            
