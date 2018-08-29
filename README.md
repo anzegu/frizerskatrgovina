@@ -1,4 +1,6 @@
-# frizerskatrgovina
+<b>DESCRIPTION</b>
+
+--------------------------------
 
 Hairdresser supply shop
 
@@ -12,3 +14,5 @@ Prijavljen uporabnik bi lahko iskal, da pa bi uporabnik lahko kako stvar naroči
 salon naroča.
 
 This is a shop app where different hairdressers create an account and buy supplies for their shops.
+
+---------------------------------
